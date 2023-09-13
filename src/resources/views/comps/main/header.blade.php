@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
     <body>
-        @section('navbar')
-            <div style="width: 100%; background-color: green">
+        @section('header')
+            <link href="{{asset('css/app.css')}}" rel="stylesheet">
+            <div class="header">
                 <a href="/  "><img src="/favicon.ico"></a>
             </div>
     </body>

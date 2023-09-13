@@ -2,7 +2,7 @@
 <html>
     <body>
         @section('footer')
-            <div style="width: 100%; background-color: green; height: 50px; margin-top:5%">
+            <div class="footer">
                 <p>Footer</p>
                 
             </div>

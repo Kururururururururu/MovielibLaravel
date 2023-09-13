@@ -13,6 +13,56 @@
     background-color: lime;
 }
 
+.light :root {
+    --background: hsl(0 0% 100%);
+    --foreground: hsl(224 71% 4%);
+    --card: hsl(0 0% 100%);
+    --card-foreground: hsl(224 71% 4%);
+    --popover: hsl(0 0% 100%);
+    --popover-foreground: hsl(224 71% 4%);
+    --primary: hsl(262 83% 57%);
+    --primary-foreground: hsl(210 20% 98%);
+    --secondary: hsl(220 14% 95%);
+    --secondary-foreground: hsl(220 39% 11%);
+    --muted: hsl(220 14% 95%);
+    --muted-foreground: hsl(220 8% 46%);
+    --accent: hsl(220 14% 95%);
+    --accent-foreground: hsl(220 39% 11%);
+    --destructive: hsl(0 84% 60%);
+    --destructive-foreground: hsl(210 20% 98%);
+    --border: hsl(220 13% 91%);
+    --input: hsl(220 13% 91%);
+    --ring: hsl(262 83% 57%);
+    --radius: 0.5rem;
+}
+
+.dark {
+    --background: hsl(224 71% 4%);
+    --foreground: hsl(210 20% 98%);
+    --card: hsl(224 71% 4%);
+    --card-foreground: hsl(210 20% 98%);
+    --popover: hsl(224 71% 4%);
+    --popover-foreground: hsl(210 20% 98%);
+    --primary: hsl(263 70% 50%);
+    --primary-foreground: hsl(210 20% 98%);
+    --secondary: hsl(215 27% 16%);
+    --secondary-foreground: hsl(210 20% 98%);
+    --muted: hsl(215 27% 16%);
+    --muted-foreground: hsl(217 10% 64%);
+    --accent: hsl(215 27% 16%);
+    --accent-foreground: hsl(210 20% 98%);
+    --destructive: hsl(0 62% 30%);
+    --destructive-foreground: hsl(210 20% 98%);
+    --border: hsl(215 27% 16%);
+    --input: hsl(215 27% 16%);
+    --ring: hsl(263 70% 50%);
+}
+
+body {
+    background: var(--background);
+}
+
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -22,37 +72,43 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;
+    display: block;
 }
+
 body {
-	line-height: 1;
+    line-height: 1;
 }
+
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
+
 blockquote, q {
-	quotes: none;
+    quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+    content: '';
+    content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }

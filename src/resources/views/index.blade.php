@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>Movie Rater</title>
         <!-- Styles -->
+        <link href="{{asset('css/css-reset.css')}}" rel="stylesheet">
         <link href="{{asset('css/app.css')}}" rel="stylesheet">
     </head>
     <body>

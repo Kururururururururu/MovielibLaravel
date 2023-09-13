@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Http;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::get('/movies/{page}',[\App\Http\Controllers\MovieController::class,'index'])->name('movies.show');

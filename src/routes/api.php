@@ -90,6 +90,7 @@ Route::post('/movie/{id}/comment', array('as' => 'movie_comment', function (Requ
             'created_at' => now(),
             'updated_at' => now()
         ]);
+
     } catch (\Exception $e) {
         return response()->json([
             'status' => 'error',

@@ -13,7 +13,7 @@ commentTabBtn.addEventListener('click', () => {
     commentsSection.innerText = 'Loading...'
     const movieId = new URLSearchParams(window.location.search).get('id')
     fetch(`/api/movie/${movieId}/comments`, {
-        cache: 'force-cache',
+        cache: 'no-cache',
     }).then((res) => res.json()).then((res) => {
         commentsSection.innerText= ''
         if (res.status === 'success') {

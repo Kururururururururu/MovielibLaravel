@@ -26,3 +26,5 @@ Homestead.json
 # IDE
 .idea
 .vscode
+src/bun.lockb
+src/composer.lock

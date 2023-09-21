@@ -179,3 +179,46 @@ Route::post('/movie/{id}/watchlist', function(Request $Request, $id){
         ], 500);
     }
 });
+
+Route::post('/movie/{id}/rating', function(Request $request, $id) {
+    try {
+        $rating = $request->input('rating');
+
+        if ($rating == '') {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Rating cannot be empty'
+            ], 400);
+        }
+
+        $validated = $request->validate([
+            'rating' => 'required|numeric|min:1|max:5',
+        ]);
+
+        $insert = DB::table('ratings')->insert([
+            'movie_id' => $id,
+            'author' => 'Anonymous',
+            'rating' => $validated['rating'],
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        if (!$insert) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Error inserting rating'
+            ], 500);
+        }
+
+        return response()->json([
+            'status' => 'success',
+        ]);
+
+    } catch (Exception $e) {
+        return response()->json([
+            'status' => 'error',
+            'message' => 'Error inserting rating',
+            'exception' => $e->getMessage()
+        ], 500);
+    }
+});

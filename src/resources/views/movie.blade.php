@@ -16,10 +16,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
           rel="stylesheet">
-    @vite('movie')
+{{--    @vite('movie')--}}
 </head>
 <body>
-{{--{{dd($movie)}}--}}
+{{--{{dd($movie->rating)}}--}}
 <div class="outer-body-container">
     <!-- Header imported from ./comps/main/header.blade.php -->
     @include('comps.main.header')
@@ -31,15 +31,15 @@
             <h1 class="movie-title"><a href="{{$movie->homepage}}" class="movie-title-link">
                     {{$movie->title}}
                 </a></h1>
-            <div class="movie-rating">
-                @php($rating = 3.5)
+            <div class="movie-rating" id="movie-rating-stars">
+                @php($rating = $movie->rating+0.5)
                 @for($i = 0; $i < 5; $i++)
                     @if($rating<= 0.5)
-                        <img src="/icons/star-empty.svg" alt="empty star" class="star-icon">
+                        <img src="/icons/star-empty.svg" alt="empty star" class="star-icon" id="star-{{$i}}">
                     @elseif($rating <= 1)
-                        <img src="/icons/star-half.svg" alt="half star" class="star-icon">
+                        <img src="/icons/star-half.svg" alt="half star" class="star-icon" id="star-{{$i}}">
                     @else
-                        <img src="/icons/star-filled.svg" alt="full star" class="star-icon">
+                        <img src="/icons/star-filled.svg" alt="full star" class="star-icon" id="star-{{$i}}">
                     @endif
                     @php($rating--)
                 @endfor
@@ -107,7 +107,8 @@
                     <p class="movie-info-item-value">{{$movie->status}}</p></div>
                 <div class="movie-info-item movie-info-item-overview"><p class="movie-info-item-title">Overview</p>
                     <p class="movie-info-item-value">{{$movie->overview}}</p></div>
-                <button class="movie-watchlist-btn" id="add-to-watchlist-btn" data-watchlist="{{$movie->watchlist ? 'true' : 'false'}}">
+                <button class="movie-watchlist-btn" id="add-to-watchlist-btn"
+                        data-watchlist="{{$movie->watchlist ? 'true' : 'false'}}">
                     @if(!$movie->watchlist)
                         Add to Watchlist
                     @else
@@ -133,11 +134,15 @@
                 <div class="movie-info-extra" id="more_information_tab">
                     <h1 class="movie-info-extra-title">Cast</h1>
                     <div class="movie-casts">
-                        @php($cast = collect($movie->credits->cast)->sortByDesc('popularity')->take(10))
-                        @foreach($cast as $person)
+                        @foreach($movie->credits->cast as $person)
                             <div class="movie-person">
-                                <img src="https://image.tmdb.org/t/p/original{{$person->profile_path}}"
-                                     alt="{{$person->name}}" class="movie-person-img">
+                                @if($person->profile_path)
+                                    <img src="https://image.tmdb.org/t/p/original{{$person->profile_path}}"
+                                         alt="{{$person->name}}" class="movie-person-img">
+                                @else
+                                    <img src="{{asset('images/person-placeholder.jpg')}}" alt="{{$person->name}}"
+                                         class="movie-person-img">
+                                @endif
                                 <p class="movie-person-name">{{$person->name}}</p>
                                 <p class="movie-person-character">{{$person->character}}</p>
                             </div>
@@ -166,5 +171,6 @@
 <script defer src="{{asset('js/movie/{id}/tabs-section-handler.js')}}"></script>
 <script defer src="{{asset('js/movie/{id}/comment-section-handler.js')}}"></script>
 <script defer src="{{asset('js/movie/{id}/add-to-watchlist-btn.js')}}"></script>
+<script defer src="{{asset('js/movie/{id}/add-rating.js')}}"></script>
 </body>
 </html>

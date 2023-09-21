@@ -44,6 +44,7 @@ class MovieController extends Controller
 
         $movie = json_decode($movie_response->getContent());
         $movie->credits = json_decode($credits_response->getContent());
+        $movie->credits->cast = collect($movie->credits->cast)->sortByDesc('popularity')->take(10);
 
         $request = DB::table('watchlist')->where('movie_id', $id)->where('author', 'Anonymous')->get();
 
@@ -52,6 +53,10 @@ class MovieController extends Controller
         } else {
             $movie->watchlist = false;
         }
+
+        $request = DB::table('ratings')->where('movie_id', $id)->get();
+
+        $movie->rating = collect($request)->average('rating');
 
         return view('movie', ['movie' => $movie]);
     }

@@ -88,6 +88,14 @@
     height: 1.5rem;
 }
 
+.star-icon.hover-selected {
+    content: url("/icons/star-filled.svg") !important;
+}
+
+.star-icon.hover-not-selected {
+    content: url("/icons/star-empty.svg");
+}
+
 .movie-poster-caption {
     font-size: 0.95rem;
     font-weight: 400;

@@ -11,17 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('comments', function (Blueprint $table) {
+        Schema::create('watchlist', function (Blueprint $table) {
             $table->id()->unique();
             $table->integer('movie_id');
-//final should be ->            $table->integer('author_id');//->references('id')->on('users')
             $table->string('author');
-            $table->text('comment');
+            //final should be ->            $table->integer('author_id');//->references('id')->on('users')
             $table->timestamps();
-            $table->index('movie_id', 'movie_id_index');
         });
-
-
     }
 
     /**
@@ -29,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('comments');
+        Schema::dropIfExists('watchlist');
     }
 };

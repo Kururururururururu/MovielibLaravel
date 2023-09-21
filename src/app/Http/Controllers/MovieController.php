@@ -45,6 +45,14 @@ class MovieController extends Controller
         $movie = json_decode($movie_response->getContent());
         $movie->credits = json_decode($credits_response->getContent());
 
+        $request = DB::table('watchlist')->where('movie_id', $id)->where('author', 'Anonymous')->get();
+
+        if (count($request) > 0) {
+            $movie->watchlist = true;
+        } else {
+            $movie->watchlist = false;
+        }
+
         return view('movie', ['movie' => $movie]);
     }
 }

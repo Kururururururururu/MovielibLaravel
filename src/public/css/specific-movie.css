@@ -315,7 +315,47 @@
     align-items: center;
 }
 
+.optimistic-comment {
+    opacity: 0.5;
+}
+
 .comment-content {
     font-weight: 400;
     color: var(--muted-foreground);
+}
+
+.movie-watchlist-btn {
+    padding: 0.65rem 1.3rem;
+    background-color: var(--accent-foreground);
+    color: var(--accent);
+    border-radius: var(--radius);
+    transition: scale 0.1s ease-in-out;
+    width: fit-content;
+}
+
+.movie-watchlist-btn:hover {
+    background-color: var(--background);
+    color: var(--foreground);
+    transition: color 0.05s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.movie-watchlist-btn:active {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+    transition: color 0.05s ease-in-out, background-color 0.05s ease-in-out;
+    scale: 95%;
+}
+
+.movie-watchlist-btn.added {
+    background-color: var(--success);
+    color: var(--success-foreground);
+}
+
+.movie-watchlist-btn.removed {
+    background-color: var(--destructive);
+    color: var(--destructive-foreground);
+}
+
+.movie-watchlist-btn:disabled {
+    filter: brightness(0.5);
 }

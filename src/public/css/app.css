@@ -37,6 +37,7 @@
     background-color: hsl(from var(--background) h s l / 50%);
     backdrop-filter: blur(10px);
     padding: 1rem;
+    z-index: 100;
 }
 
 .footer {

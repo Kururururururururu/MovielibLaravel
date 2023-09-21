@@ -15,6 +15,7 @@ commentTabBtn.addEventListener('click', () => {
     fetch(`/api/movie/${movieId}/comments`, {
         cache: 'no-cache',
     }).then((res) => res.json()).then((res) => {
+        console.log(res)
         commentsSection.innerText= ''
         if (res.status === 'success') {
             if (res.comments.length === 0) {
@@ -41,7 +42,7 @@ commentTabBtn.addEventListener('click', () => {
             }
         }
     }).catch((err) => {
-        console.log(err)
+        console.error(err)
         commentsSection.innerText= ''
     })
 })

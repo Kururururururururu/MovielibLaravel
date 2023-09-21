@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
           rel="stylesheet">
-    {{--    @vite('movie')--}}
+    @vite('movie')
 </head>
 <body>
 {{--{{dd($movie)}}--}}
@@ -107,6 +107,13 @@
                     <p class="movie-info-item-value">{{$movie->status}}</p></div>
                 <div class="movie-info-item movie-info-item-overview"><p class="movie-info-item-title">Overview</p>
                     <p class="movie-info-item-value">{{$movie->overview}}</p></div>
+                <button class="movie-watchlist-btn" id="add-to-watchlist-btn" data-watchlist="{{$movie->watchlist ? 'true' : 'false'}}">
+                    @if(!$movie->watchlist)
+                        Add to Watchlist
+                    @else
+                        Remove from Watchlist
+                    @endif
+                </button>
             </div>
         </div>
         <hr class="divider"/>
@@ -146,7 +153,7 @@
                                   placeholder="Write a comment..."></textarea>
                         <button class="comment-form-btn" type="submit" id="comment-btn">Submit</button>
                     </form>
-                    <div class="movie-info-comments" id="comments">
+                    <div id="comments">
                     </div>
                 </div>
             </div>
@@ -156,7 +163,8 @@
 </div>
 <!-- Footer imported from ./comps/main/footer.blade.php -->
 @include('comps.main.footer')
-<script defer src="js/movie/{id}/tabs-section-handler.js"></script>
-<script defer src="js/movie/{id}/comment-section-handler.js"></script>
+<script defer src="{{asset('js/movie/{id}/tabs-section-handler.js')}}"></script>
+<script defer src="{{asset('js/movie/{id}/comment-section-handler.js')}}"></script>
+<script defer src="{{asset('js/movie/{id}/add-to-watchlist-btn.js')}}"></script>
 </body>
 </html>

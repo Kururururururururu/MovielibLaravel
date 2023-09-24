@@ -7,7 +7,7 @@
     <link href="{{ asset('css/register.css') }}" rel="stylesheet">
 
     <!-- Javascript -->
-    <script src="register.js"></script>
+    <script src="{{ asset('js/register.js') }}"></script>
 </head>
 
 <body>

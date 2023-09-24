@@ -7,6 +7,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/login.css') }}" rel="stylesheet">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+
+    <!-- Javascript -->
+    <script src="{{ asset('js/login.js') }}"></script>
 </head>
 
 <body>
@@ -20,7 +23,7 @@
         <input type="text" id="username" name="username" required><br>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required><br>
-        <input type="register" value="Register">
+        <input type="submit" id="registerbutton" value="Register">
         <input type="submit" value="Login">
     </form>
 </body>

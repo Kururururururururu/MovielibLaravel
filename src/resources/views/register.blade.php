@@ -5,7 +5,9 @@
     <link href="{{ asset('css/css-reset.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/register.css') }}" rel="stylesheet">
-    <script> src="register.js"</script>
+
+    <!-- Javascript -->
+    <script src="register.js"></script>
 </head>
 
 <body>

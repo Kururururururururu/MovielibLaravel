@@ -1,3 +1,5 @@
+console.log("JavaScript file connected!");
+
 document.addEventListener("DOMContentLoaded", function() {
     const signinButton = document.getElementById("signinButton");
   

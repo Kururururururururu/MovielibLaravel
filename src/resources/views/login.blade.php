@@ -12,7 +12,7 @@
 <body>
      <!-- Header imported from ./comps/main/header.blade.php -->
      @include('comps.main.header')
-    <div calss="container">
+    <div class="container">
         <h1>Login</h1>
     </div>
     <form action="/login">

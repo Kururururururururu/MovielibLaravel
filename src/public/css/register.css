@@ -1,8 +1,12 @@
 
+.form-group {
+    display: flex;
+    flex-direction: row;
+}
+
 .form-group label,
 .form-group input {
-    float: left;
-    margin-right: 10px; /* Optional: Add margin to separate label-input pairs */
+    margin-right: 10px;
 }
 
 h1 {
@@ -11,14 +15,14 @@ h1 {
     font-size: 55px;
     font-weight: bold;
     position: relative;
-    top: 200px;
+    top: 150px;
     font-style: inherit;
 }
 
 form {
-    max-width: 500px;
+    max-width: 600px;
     margin-top: 250px; 
-    margin-left: 710px; 
+    margin-left: 660px; 
     background-color: hsl(215 27% 16%);
     padding: 40px;
     border-radius: 5px;
@@ -31,7 +35,8 @@ label {
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="email"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -52,6 +57,7 @@ input[type="submit"], input[type="register"]{
     text-align: center;
 }
 
-input[type="submit"]:hover, input[type="register"]:hover {
+input[type="register"]:hover {
     background-color: red;
 }
+

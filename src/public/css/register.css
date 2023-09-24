@@ -1,4 +1,9 @@
 
+.form-group label,
+.form-group input {
+    float: left;
+    margin-right: 10px; /* Optional: Add margin to separate label-input pairs */
+}
 
 h1 {
     text-align: center;
@@ -8,4 +13,45 @@ h1 {
     position: relative;
     top: 200px;
     font-style: inherit;
+}
+
+form {
+    max-width: 500px;
+    margin-top: 250px; 
+    margin-left: 710px; 
+    background-color: hsl(215 27% 16%);
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"], input[type="register"]{
+    width: 100%;
+    padding: 10px;
+    height: 40px;
+    background-color: hsl(224 71% 4%);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+input[type="submit"]:hover, input[type="register"]:hover {
+    background-color: red;
 }

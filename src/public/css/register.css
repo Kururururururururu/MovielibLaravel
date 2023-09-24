@@ -1,14 +1,10 @@
 
-.form-group {
-    display: flex;
-    flex-direction: row;
+.Alreadycreated label,
+.Alreadycreated button {
+  display: inline;
+  /* Optional: You can add some spacing between the label and button */
+  margin-right: 10px;
 }
-
-.form-group label,
-.form-group input {
-    margin-right: 10px;
-}
-
 h1 {
     text-align: center;
     color: red;
@@ -34,6 +30,7 @@ label {
     margin-bottom: 5px;
 }
 
+
 input[type="text"],
 input[type="password"],
 input[type="email"] {
@@ -44,7 +41,7 @@ input[type="email"] {
     border-radius: 5px;
 }
 
-input[type="submit"], input[type="register"]{
+input[type="submit"]{
     width: 100%;
     padding: 10px;
     height: 40px;
@@ -57,7 +54,18 @@ input[type="submit"], input[type="register"]{
     text-align: center;
 }
 
-input[type="register"]:hover {
+input[type="submit"]:hover {
     background-color: red;
+}
+
+button.link {
+    color: white !important;
+    font-weight: bold;
+    background: none;
+    border: none;
+}
+
+button.link:hover {
+    text-decoration: underline;
 }
 

@@ -7,7 +7,6 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/login.css') }}" rel="stylesheet">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
 </head>
 
 <body>
@@ -23,9 +22,6 @@
         <input type="password" id="password" name="password" required><br>
         <input type="register" value="Register">
         <input type="submit" value="Login">
-    
-    
-
     </form>
 </body>
 </html>

@@ -13,11 +13,13 @@
 <body>
      <!-- Header imported from ./comps/main/header.blade.php -->
      @include('comps.main.header')
-    <div class="container">
-        <h1>Movie Rater</h1>
-    </div>
+    <div class="create">
     <form action="/register">
-        <div>
+        <div class="container">
+            <h1>Movie Rater</h1>
+            <pre>
+
+            </pre>
             <label for="name">Name:</label>
             <input type="text" id="username" name="username" placeholder="First and last name" required><br>
             <label for="email">Email:</label>
@@ -32,6 +34,7 @@
         <label for="Accountexist">Already have an account?</label>
         <button class="link" id="signinButton">Sign in</button>
         </div>
+    </div>
     </form>
     
 </body>

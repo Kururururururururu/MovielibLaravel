@@ -1,24 +1,26 @@
 
-.Alreadycreated label,
-.Alreadycreated button {
-  display: inline;
-  /* Optional: You can add some spacing between the label and button */
-  margin-right: 10px;
+.container {
+    margin-top: 20px;
 }
+
 h1 {
     text-align: center;
-    color: red;
+    margin: 0%,50%;
+    color: white;
     font-size: 55px;
     font-weight: bold;
-    position: relative;
-    top: 150px;
+    top: 200px;
     font-style: inherit;
+    
+}
+.create{
+    padding: 6%; 
 }
 
 form {
-    max-width: 600px;
-    margin-top: 250px; 
-    margin-left: 660px; 
+    max-width: 45%;
+    margin-right: auto; 
+    margin-left: auto;
     background-color: hsl(215 27% 16%);
     padding: 40px;
     border-radius: 5px;
@@ -30,7 +32,6 @@ label {
     margin-bottom: 5px;
 }
 
-
 input[type="text"],
 input[type="password"],
 input[type="email"] {
@@ -41,7 +42,7 @@ input[type="email"] {
     border-radius: 5px;
 }
 
-input[type="submit"]{
+input[type="submit"], input[type="register"]{
     width: 100%;
     padding: 10px;
     height: 40px;
@@ -54,9 +55,14 @@ input[type="submit"]{
     text-align: center;
 }
 
-input[type="submit"]:hover {
-    background-color: red;
+input[type="submit"]:hover, input[type="register"]:hover {
+    background-color: var(--primary);
 }
+
+button.link:hover {
+    text-decoration: underline;
+}
+
 
 button.link {
     color: white !important;
@@ -65,7 +71,6 @@ button.link {
     border: none;
 }
 
-button.link:hover {
-    text-decoration: underline;
+div.Alreadycreated {
+    display: inline-flex;
 }
-

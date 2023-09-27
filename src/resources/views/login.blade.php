@@ -16,9 +16,14 @@
      <!-- Header imported from ./comps/main/header.blade.php -->
      @include('comps.main.header')
     <div class="container">
-        <h1>Login</h1>
+
     </div>
-    <form action="/login">
+    <div class="lort">
+    <form action="/login" class="loginform">
+        <h1>Login</h1>
+        <pre>
+            
+        </pre>
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required><br>
         <label for="password">Password:</label>
@@ -26,5 +31,6 @@
         <input type="submit" id="registerbutton" value="Register">
         <input type="submit" value="Login">
     </form>
+    </div>
 </body>
 </html>

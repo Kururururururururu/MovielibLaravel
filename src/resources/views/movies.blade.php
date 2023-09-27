@@ -13,6 +13,7 @@
           integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 <body class="p-4 bg-black">
+@include('comps.main.menu')
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-xl-5 g-4">
     @foreach($movies->results as $movie)
         <div class="col">

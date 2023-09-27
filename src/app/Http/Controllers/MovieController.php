@@ -15,6 +15,10 @@ class MovieController extends Controller
 
         $response = Route::dispatch($request);
 
-        return view('movies', ['movies' => json_decode($response->getContent())]);
+        $genreRequest = Request::create('/api/genres', 'GET');
+
+        $genreResponse = Route::dispatch($genreRequest);
+
+        return view('movies', ['movies' => json_decode($response->getContent()), 'genres' => json_decode($genreResponse->getContent())]);
     }
 }

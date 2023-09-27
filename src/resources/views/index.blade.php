@@ -16,66 +16,8 @@
 <body>
     <!-- Header imported from ./comps/main/header.blade.php -->
     @include('comps.main.header')
-    <!-- Menu imported from ./comps/main/menu.blade.php -->
-    @include('comps.main.menu')
     <!-- Main Body Start -->
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
-    <p>Index</p>
+    
     <!-- Main Body End -->
     <!-- Footer imported from ./comps/main/footer.blade.php -->
     @include('comps.main.footer')

@@ -29,3 +29,11 @@ Route::get('/popular_movies/{page}', array('as' => 'popular_movies', function ($
 
     return response()->json($response->json());
 }));
+
+Route::get('/genres', function () {
+    $response = Http::withoutVerifying()
+        ->withToken(env('TMDB_PUBLIC_API_KEY'))
+        ->get('https://api.themoviedb.org/3/genre/movie/list?language=en-US');
+
+    return response()->json($response->json());
+});

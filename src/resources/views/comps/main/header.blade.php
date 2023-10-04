@@ -9,3 +9,4 @@
             @include('comps.theme-toggle')
         </div>
     </div>
+    <div class="header-container"></div>

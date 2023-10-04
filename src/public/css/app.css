@@ -32,6 +32,9 @@
     background-color: hsl(from var(--background) h s l / 50%);
     backdrop-filter: blur(10px);
 }
+.header-container {
+    padding-top: 50px;
+}
 
 .footer {
     width: 100%;

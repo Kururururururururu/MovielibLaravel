@@ -15,9 +15,6 @@
 <body>
      <!-- Header imported from ./comps/main/header.blade.php -->
      @include('comps.main.header')
-    <div class="container">
-
-    </div>
     <div class="lort">
     <form action="/login" class="loginform">
         <h1>Login</h1>

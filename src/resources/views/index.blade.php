@@ -26,7 +26,7 @@
     <!-- Main Body Start -->
     <div class="welcome">
         <h1>Movie Rater</h1>
-        <p>you rate – we hate</p>
+        <p>The Ultimate Film Appreciator</p>
     </div>
     
     <div class="featured-movies">

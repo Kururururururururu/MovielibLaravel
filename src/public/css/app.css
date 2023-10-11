@@ -32,6 +32,9 @@
     background-color: hsl(from var(--background) h s l / 50%);
     backdrop-filter: blur(10px);
 }
+.header-container {
+    padding-top: 50px;
+}
 
 .footer {
     width: 100%;
@@ -138,4 +141,14 @@ body {
     line-height: 1.5rem;
     -webkit-font-smoothing: auto;
     -moz-osx-font-smoothing: auto;
+}
+
+pre {
+    -webkit-touch-callout: none; /* iOS Safari /
+        -webkit-user-select: none; / Safari /
+        -khtml-user-select: none; / Konqueror HTML /
+            -moz-user-select: none; / Old versions of Firefox /
+            -ms-user-select: none; / Internet Explorer/Edge /
+                user-select: none; / Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
 }

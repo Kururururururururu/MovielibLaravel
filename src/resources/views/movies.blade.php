@@ -15,7 +15,7 @@
 <body class="p-4 bg-black">
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-xl-5 g-4">
     @foreach($movies->results as $movie)
-        <div class="col">
+        <a class="col" href="/movie?id={{$movie->id}}">
             <div class="card h-100">
                 <img src="https://image.tmdb.org/t/p/original/{{$movie->poster_path}}" class="card-img-top"
                      alt="{{$movie->title}}">
@@ -25,7 +25,7 @@
                     <p class="card-text"><small class="text-muted">{{$movie->release_date}}</small></p>
                 </div>
             </div>
-        </div>
+        </a>
     @endforeach
 </div>
 

@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('watchlist', function (Blueprint $table) {
-            $table->id()->unique();
+            $table->uuid('id')->primary();
             $table->integer('movie_id');
-            $table->string('author');
-            //final should be ->            $table->integer('author_id');//->references('id')->on('users')
+            $table->integer('user_id')->unsigned();
+//            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

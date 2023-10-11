@@ -29,8 +29,9 @@
     gap: 1rem;
     justify-content: space-between;
     padding-inline: 1rem;
-    background-color: hsl(from var(--background) h s l / 50%);
+    background-color: var(--muted);
     backdrop-filter: blur(10px);
+    height: 3.5rem;
 }
 
 .footer {
@@ -43,11 +44,34 @@
     position: fixed;
     height: 100%;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
     padding-inline: 1rem;
-    background-color: lime;
+    background-color: var(--muted);
     margin-top: 3.5rem;
+    width: 15rem;
+    
+}
+
+.text-2 {
+    font-size: 150%;
+}
+
+.searchbar {
+    width: 80%;
+    height: 2.5rem;
+}
+
+.searchbutton {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0rem 0rem !important;
+}
+
+
+.searchbar-box {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
 }
 
 .header-right {
@@ -145,4 +169,14 @@ body {
     line-height: 1.5rem;
     -webkit-font-smoothing: auto;
     -moz-osx-font-smoothing: auto;
+}
+
+pre {
+    -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
 }

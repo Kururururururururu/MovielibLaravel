@@ -222,3 +222,13 @@ Route::post('/movie/{id}/rating', function(Request $request, $id) {
         ], 500);
     }
 });
+
+}));
+
+Route::get('/genres', function () {
+    $response = Http::withoutVerifying()
+        ->withToken(env('TMDB_PUBLIC_API_KEY'))
+        ->get('https://api.themoviedb.org/3/genre/movie/list?language=en-US');
+
+    return response()->json($response->json());
+});

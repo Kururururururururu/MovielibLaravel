@@ -223,8 +223,6 @@ Route::post('/movie/{id}/rating', function(Request $request, $id) {
     }
 });
 
-}));
-
 Route::get('/genres', function () {
     $response = Http::withoutVerifying()
         ->withToken(env('TMDB_PUBLIC_API_KEY'))

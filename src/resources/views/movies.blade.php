@@ -18,13 +18,17 @@
 
         <section class="movie-list">
             @foreach ($movies-> results as $movie)
-                <a class="movie-link" href="{{"/movie/" . $movie->id}}">
+                <a class="movie-link" href="{{"/movie?id=" . $movie->id}}">
                     <div class="movie-card">
                         <img class="movie-image" src="{{"https://image.tmdb.org/t/p/w200/" . $movie->poster_path}}" alt="">
                         <h2 class="movie-text">{{ $movie->title }}</h2>
-                        <!-- Make either star or text based rating display here. -->
+                        <!-- Make either star or text based rating display here. 
+                        Use own database instead of tmdb data. -->
                         <p class="movie-rating">{{$movie->vote_average}}</p>
                         <p class="movie-release">{{$movie->release_date}}</p>
+                    </div>
+                    <div class="page-select">
+                        
                     </div>
                 </a>
             @endforeach

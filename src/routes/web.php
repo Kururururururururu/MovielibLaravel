@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/movies/{page}',[\App\Http\Controllers\MovieController::class,'index'])->name('movies.show');
+Route::get('/movies/{page?}',[\App\Http\Controllers\MovieController::class,'index'])->name('movies.show');
 Route::get('/login',[\App\Http\Controllers\LoginController::class,'index'])->name('login.show');
 Route::get('/register',[\App\Http\Controllers\RegisterController::class,'index'])->name('register.show');
 

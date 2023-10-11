@@ -8,8 +8,12 @@ use Illuminate\Support\Facades\Route;
 
 class MovieController extends Controller
 {
-    public function index($page)
+    public function index($page = null)
     {
+
+        if(empty($page))    {
+            $page = 1;
+        }
 
         $request = Request::create('/api/popular_movies/' . $page);
 
@@ -50,7 +54,7 @@ class MovieController extends Controller
         $movie->credits = json_decode($credits_response->getContent());
         $movie->credits->cast = collect($movie->credits->cast)->sortByDesc('popularity')->take(10);
 
-        $request = DB::table('watchlist')->where('movie_id', $id)->where('author', 'Anonymous')->get();
+        $request = DB::table('watchlist')->where('movie_id', $id)->get();
 
         if (count($request) > 0) {
             $movie->watchlist = true;

@@ -26,6 +26,11 @@
             @error('name')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Username" required><br>
+            @error('username')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
             <label for="email">Email:</label>
             <input type="email" id="email" name="email"required><br>
             @error('email')
@@ -37,10 +42,9 @@
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
             <label for="password_confirmation">Confirm password:</label>
-            <input type="password" id="password_confirmation" name="password_confirmation" required><br>
-            
+            <input type="password" id="password_confirmation" name="password_confirmation" required><br>   
         </div>
-        <input type="submit" value="Create Movie Rater account">
+        <input type="submit" value="Create Movie Rater account" id="registerButton">
         <div class="Alreadycreated">
         <label for="Accountexist">Already have an account?</label>
         <button class="link" id="signinButton">Sign in</button>

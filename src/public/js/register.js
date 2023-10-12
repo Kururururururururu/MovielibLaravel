@@ -9,4 +9,12 @@ document.addEventListener("DOMContentLoaded", function() {
       window.location.href = "/login";
 
     });
+
+    const registerButton = document.getElementById("registerButton");
+
+    registerButton.addEventListener("click", function(event) {
+        event.preventDefault();
+
+        window.location.href = "/index";
+    });
   });

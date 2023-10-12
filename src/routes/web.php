@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Http;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,8 @@ Route::get('/', function () {
 Route::get('/movies/{page}',[\App\Http\Controllers\MovieController::class,'index'])->name('movies.show');
 Route::get('/login',[\App\Http\Controllers\LoginController::class,'index'])->name('login.show');
 Route::get('/register',[\App\Http\Controllers\RegisterController::class,'index'])->name('register.show');
+
+Route::post('/register',[\App\Http\Controllers\RegisterController::class,'store'])->name('register');
 
 
 Route::get('/movie', [\App\Http\Controllers\MovieController::class,'specific'])->name('movie.show');

@@ -21,8 +21,6 @@
     <!-- Header imported from ./comps/main/header.blade.php -->
     
     <div class="navbar"></div>
-    <!-- Menu imported from ./comps/main/menu.blade.php -->
-    <!-- @include('comps.main.menu') -->
     <!-- Main Body Start -->
     <div class="welcome">
         <h1>Movie Rater</h1>

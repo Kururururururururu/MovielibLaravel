@@ -24,6 +24,7 @@ Route::get('/login',[\App\Http\Controllers\LoginController::class,'index'])->nam
 Route::get('/register',[\App\Http\Controllers\RegisterController::class,'index'])->name('register.show');
 
 Route::post('/register',[\App\Http\Controllers\RegisterController::class,'store'])->name('register');
+Route::post('/login',[\App\Http\Controllers\LoginController::class,'login'])->name('login');
 
 
 Route::get('/movie', [\App\Http\Controllers\MovieController::class,'specific'])->name('movie.show');

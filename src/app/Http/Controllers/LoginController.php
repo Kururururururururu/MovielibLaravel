@@ -12,4 +12,18 @@ class LoginController extends Controller
     {
         return view('login');
     }
+
+    public function login(Request $request)
+    {
+        $credentials = $request->only('username', 'password');
+
+        $user = User::where('username', $credentials['username'])->first();
+
+        if ($user && Hash::check($credentials['password'], $user->password)) {
+            Auth::login($user);
+            return redirect()->route('/')->with('success', 'Logged in successfully');
+        }
+
+        return back()->withErrors(['username' => 'Invalid credentials']);
+    }
 }

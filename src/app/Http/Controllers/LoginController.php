@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+
 
 class LoginController extends Controller
 {
@@ -21,7 +25,7 @@ class LoginController extends Controller
 
         if ($user && Hash::check($credentials['password'], $user->password)) {
             Auth::login($user);
-            return redirect()->route('/')->with('success', 'Logged in successfully');
+            return redirect('/')->with('success', 'Logged in successfully');
         }
 
         return back()->withErrors(['username' => 'Invalid credentials']);

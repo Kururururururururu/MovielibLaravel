@@ -16,7 +16,8 @@
      <!-- Header imported from ./comps/main/header.blade.php -->
      @include('comps.main.header')
     <div class="lort">
-    <form action="/login" class="loginform">
+    <form method="POST" action="{{ route('login') }}" class="loginform">
+    @csrf
         <h1>Login</h1>
         <pre>
             

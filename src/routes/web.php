@@ -22,5 +22,8 @@ Route::get('/movies/{page?}',[\App\Http\Controllers\MovieController::class,'inde
 Route::get('/login',[\App\Http\Controllers\LoginController::class,'index'])->name('login.show');
 Route::get('/register',[\App\Http\Controllers\RegisterController::class,'index'])->name('register.show');
 
-
 Route::get('/movie', [\App\Http\Controllers\MovieController::class,'specific'])->name('movie.show');
+
+Route::get('/watchlist', function () {
+    return view('watchlist');
+});

@@ -1,5 +1,6 @@
 @section('menu')
     <div class="menu">
+        <script src="{{ asset('js/movie_list/menu_sort_selector.js') }}"></script>
         <pre>
 
         </pre>
@@ -18,11 +19,11 @@
             </pre>
             <div class="sortby-list">
                 <div class="sortby-item">
-                    <input type="radio" id="sortby-vote-average" name="sortby" value="vote-average" checked>
+                    <input type="radio" id="sortby-vote-average" name="sortby" value="vote_average" checked>
                     <label for="sortby-vote-average">Vote average</label>
                 </div>
                 <div class="sortby-item">
-                    <input type="radio" id="sortby-release-date" name="sortby" value="release-date">
+                    <input type="radio" id="sortby-release-date" name="sortby" value="primary_release_date">
                     <label for="sortby-release-date">Release date</label>
                 </div>
                 <div class="sortby-item">

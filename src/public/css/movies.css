@@ -13,9 +13,9 @@
 .movie-list {
     z-index: 0;
     margin-left: 15rem;
-    margin-top: 3.5rem;
+    margin-top: 5rem;
     padding-left: 0.5rem;
-    padding-top: 2.3rem;
+    padding-top: 0.5rem;
 }
 
 .movie-image {

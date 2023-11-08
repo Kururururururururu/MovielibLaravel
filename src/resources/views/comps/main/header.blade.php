@@ -9,6 +9,9 @@
             <a href="#" class="nav-link">About Us</a>
             <a href="#" class="nav-link">Contact Us</a>
             @if (Auth::check())
+                <a href="{{ url('/profile') }}" class="nav-link">Profile</a>
+            @endif
+            @if (Auth::check())
                 <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link">Logout</a>
                 <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                     @csrf

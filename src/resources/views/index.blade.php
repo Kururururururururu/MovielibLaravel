@@ -28,8 +28,22 @@
     </div>
     
     <div class="featured-movies">
-        <h1>Featured movies:</h1>
+        <h1>Popular movies:</h1>
         <div class="top5">
+        @foreach ($movies->results as $index => $movie)
+            @if ($index < 5)
+                <a class="featured" href="{{ "/movie?id=" . $movie->id }}">
+                    <img class="movie-img" src="{{
+                        @getimagesize("https://image.tmdb.org/t/p/w200/" . $movie->poster_path) ?
+                        "https://image.tmdb.org/t/p/w200/" . $movie->poster_path :
+                        asset('icons/movie_fallback_image.jpg')
+                    }}">
+                    <p class="movie-title">{{ $movie->title }}</p>
+                    <p class="rating">{{ $movie->vote_average }}</p>
+                </a>
+            @endif
+        @endforeach
+            <!--
             <a class="featured" href="#1">
                 <img class="movie-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/330px-No-Image-Placeholder.svg.png?20200912122019">
                 <p class="movie-title">title1</p>
@@ -55,6 +69,7 @@
                 <p class="movie-title">title5</p>
                 <p class="rating"> 0</p>
             </a>
+            -->
         </div>
     </div>
     

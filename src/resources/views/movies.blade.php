@@ -20,7 +20,11 @@
             @foreach ($movies-> results as $movie)
                 <a class="movie-link" href="{{"/movie?id=" . $movie->id}}">
                     <div class="movie-card">
-                        <img class="movie-image" src="{{"https://image.tmdb.org/t/p/w200/" . $movie->poster_path}}" alt="">
+                        <img class="movie-image" src="{{
+                        @getimagesize("https://image.tmdb.org/t/p/w200/" . $movie->poster_path) ?
+                        "https://image.tmdb.org/t/p/w200/" . $movie->poster_path :
+                        asset('icons/movie_fallback_image.jpg')
+                        }}">
                         <h2 class="movie-text">{{ $movie->title }}</h2>
                         <!-- Make either star or text based rating display here. 
                         Use own database instead of tmdb data. -->

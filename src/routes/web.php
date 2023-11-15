@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Http;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +29,7 @@ Route::get('/movie', [\App\Http\Controllers\MovieController::class,'specific'])-
 Route::get('/watchlist', function () {
     return view('watchlist');
 });
+Route::post('/logout', [\App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
+Route::post('/register',[\App\Http\Controllers\RegisterController::class,'store'])->name('register');
+Route::post('/login',[\App\Http\Controllers\LoginController::class,'login'])->name('login');
+Route::get('/movie', [\App\Http\Controllers\MovieController::class,'specific'])->name('movie.show')->middleware('auth');

@@ -16,7 +16,8 @@
      <!-- Header imported from ./comps/main/header.blade.php -->
      @include('comps.main.header')
     <div class="lort">
-    <form action="/login" class="loginform">
+    <form method="POST" action="{{ route('login') }}" class="loginform">
+    @csrf
         <h1>Login</h1>
         <pre>
             
@@ -26,7 +27,7 @@
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required><br>
         <input type="submit" id="registerbutton" value="Register">
-        <input type="submit" value="Login">
+        <input type="submit" id="loginbutton" value="Login">
     </form>
     </div>
 </body>

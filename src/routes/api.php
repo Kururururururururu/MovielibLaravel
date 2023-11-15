@@ -20,12 +20,26 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/popular_movies/{page}', function ($page) {
+Route::get('/popular_movies/{page}/{sort}', function (Request $request, $page, $sort) {
+
     $response = Http::withoutVerifying()
+        ->withToken(env('TMDB_PUBLIC_API_KEY'))
+        ->get('https://api.themoviedb.org/3/discover/movie?', [
+            'language' => 'en-US',
+            'sort_by' => $sort . '.desc',
+            'page' => $page,
+            'primary_release_date.lte' => '2023-12-31',
+            'vote_count.gte' => '5'
+        ]);
+
+
+
+        /*
         ->withToken(env('TMDB_PUBLIC_API_KEY'))
         ->get('https://api.themoviedb.org/3/movie/popular?language=en-US', [
             'page' => $page
         ]);
+        */
 
     return response()->json($response->json());
 });

@@ -8,16 +8,25 @@ use Illuminate\Support\Facades\Route;
 
 class MovieController extends Controller
 {
-    public function index($page = null)
+    public function index(Request $request, $page = null)
     {
 
+        //Check the queried sorting method, and make sure it's an implemented method, if not default to vote_average.
+        if(!$request->filled('sort') || !in_array($request->input('sort'), ['popularity', 'primary_release_date', 'vote_average'])) {
+            $sort = 'vote_average';
+        } else {
+            $sort = $request->input('sort');
+        }
+
+        
+        
         if(empty($page))    {
             $page = 1;
         }
 
-        $request = Request::create('/api/popular_movies/' . $page);
+        $requestM = Request::create('/api/popular_movies/' . $page . '/' . $sort);              
 
-        $response = Route::dispatch($request);
+        $response = Route::dispatch($requestM);
 
         $genreRequest = Request::create('/api/genres', 'GET');
 

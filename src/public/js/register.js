@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function() {
       alert('Password and password confirmation do not match.');
       return false;
     }
-
+    
     return true;
   }
 });

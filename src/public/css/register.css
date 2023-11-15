@@ -61,11 +61,12 @@ input[type="submit"]:hover, input[type="register"]:hover {
 
 a.link:hover {
     text-decoration: underline;
+    font-weight: bold;
+
 }
 
 a.link {
-    color: white !important;
-    font-weight: bold;
+    color: white ;
     background: none;
     border: none;
     margin-left: 10px;

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Movie Rater</title>
+    <title>Watchlist</title>
     <!-- Styles -->
     <link href="{{ asset('css/css-reset.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -17,9 +17,10 @@
         @include('comps.main.header')
     </Header>
     <Nav>
-        
+
     </Nav>
     <section class="movie-list">
+        
         @foreach ($movies-> results as $movie)
             <a class="movie-link" href="{{"/movie?id=" . $movie->id}}">
                 <div class="movie-card">
@@ -39,6 +40,7 @@
                 </div>
             </a>
         @endforeach
+    
     </section>
     <footer>
 

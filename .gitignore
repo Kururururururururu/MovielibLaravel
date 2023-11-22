@@ -28,3 +28,9 @@ Homestead.json
 .vscode
 src/bun.lockb
 src/composer.lock
+src/Rapport/main.synctex.gz
+src/Rapport/main.log
+src/Rapport/main.fls
+src/Rapport/main.aux
+src/Rapport/main.fdb_latexmk
+src/Rapport/main.out

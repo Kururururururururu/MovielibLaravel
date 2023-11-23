@@ -1,9 +1,10 @@
 <?php
 
-use Illuminate\Http\Request;
+use Illuminate\Http\request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use Ramsey\Uuid\Uuid;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +17,11 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->get('/user', function (request $request) {
     return $request->user();
 });
 
-Route::get('/popular_movies/{page}/{sort}', function (Request $request, $page, $sort) {
+Route::get('/popular_movies/{page}/{sort}', function (request $request, $page, $sort) {
 
     $response = Http::withoutVerifying()
         ->withToken(env('TMDB_PUBLIC_API_KEY'))
@@ -34,7 +35,7 @@ Route::get('/popular_movies/{page}/{sort}', function (Request $request, $page, $
 
 
 
-        /*
+    /*
         ->withToken(env('TMDB_PUBLIC_API_KEY'))
         ->get('https://api.themoviedb.org/3/movie/popular?language=en-US', [
             'page' => $page
@@ -76,7 +77,11 @@ Route::get('/movie/{id}/credits', function ($id) {
 
 Route::get('/movie/{id}/comments', function ($id) {
 
-    $comments = DB::table('comments')->where('movie_id', $id)->get();
+    $comments = DB::table('comments')
+        ->join('users', 'comments.user_id', '=', 'users.id')
+        ->where('comments.movie_id', $id)
+        ->select('comments.*', 'users.name')
+        ->get();
 
     return response()->json([
         'status' => 'success',
@@ -84,10 +89,11 @@ Route::get('/movie/{id}/comments', function ($id) {
     ]);
 });
 
-Route::post('/movie/{id}/comment', function (Request $request, $id) {
+Route::post('/movie/{id}/comment', function (request $request, $id) {
 
     try {
-        $comment = $request->input('comment');
+        $body = json_decode($request->getContent(), true);
+        $comment = $body['comment'];
 
         if ($comment == '') {
             return response()->json([
@@ -96,22 +102,11 @@ Route::post('/movie/{id}/comment', function (Request $request, $id) {
             ], 400);
         }
 
-        $validated = $request->validate([
-            'comment' => 'required|max:255',
-        ]);
-
-
-        $author = $request->input('author');
-
-        if ($author == '') {
-            $author = 'Anonymous';
-        }
-
-
         $insert = DB::table('comments')->insert([
+            'id' => Uuid::uuid4()->toString(),
             'movie_id' => $id,
-            'comment' => $validated['comment'],
-            'author' => $author,
+            'comment' => $comment,
+            'user_id' => getUserIdFromRequest($request),
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -126,7 +121,6 @@ Route::post('/movie/{id}/comment', function (Request $request, $id) {
         return response()->json([
             'status' => 'success',
         ]);
-
     } catch (Exception $e) {
         return response()->json([
             'status' => 'error',
@@ -136,9 +130,10 @@ Route::post('/movie/{id}/comment', function (Request $request, $id) {
     }
 });
 
-Route::delete('/movie/{id}/watchlist', function(Request $request, $id) {
+Route::delete('/movie/{id}/watchlist', function (request $request, $id) {
     try {
-        $delete = DB::table('watchlist')->where('movie_id', $id)->where('author', 'Anonymous')->delete();
+
+        $delete = DB::table('watchlist')->where('movie_id', $id)->where('user_id', getUserIdFromRequest($request))->delete();
 
         if (!$delete) {
             return response()->json([
@@ -150,7 +145,6 @@ Route::delete('/movie/{id}/watchlist', function(Request $request, $id) {
         return response()->json([
             'status' => 'success',
         ]);
-
     } catch (Exception $e) {
         return response()->json([
             'status' => 'error',
@@ -160,15 +154,20 @@ Route::delete('/movie/{id}/watchlist', function(Request $request, $id) {
     }
 });
 
-Route::post('/movie/{id}/watchlist', function(Request $Request, $id){
+function getUserIdFromRequest($request)
+{
+    $requestData = json_decode($request->getContent(), true);
+    $userId = $requestData['userId'];
+
+    return $userId;
+}
+
+Route::post('/movie/{id}/watchlist', function (Request $request, $id) {
     try {
-        /*$validated = $Request->validate([
-            'user_id' => 'required',
-        ]);*/
 
         $insert = DB::table('watchlist')->insert([
-//            'user_id' => $validated['user_id'],
-            'author' => 'Anonymous',
+            'id' => Uuid::uuid4()->toString(),
+            'user_id' => getUserIdFromRequest($request),
             'movie_id' => $id,
             'created_at' => now(),
             'updated_at' => now()
@@ -184,7 +183,6 @@ Route::post('/movie/{id}/watchlist', function(Request $Request, $id){
         return response()->json([
             'status' => 'success',
         ]);
-
     } catch (Exception $e) {
         return response()->json([
             'status' => 'error',
@@ -194,9 +192,11 @@ Route::post('/movie/{id}/watchlist', function(Request $Request, $id){
     }
 });
 
-Route::post('/movie/{id}/rating', function(Request $request, $id) {
+Route::post('/movie/{id}/rating', function (request $request, $id) {
     try {
-        $rating = $request->input('rating');
+        $rating = json_decode($request->getContent(), true)['rating'];
+
+        error_log(json_encode(['rating' => $rating, 'userId' => getUserIdFromRequest($request), 'movieId' => $id]));
 
         if ($rating == '') {
             return response()->json([
@@ -205,14 +205,11 @@ Route::post('/movie/{id}/rating', function(Request $request, $id) {
             ], 400);
         }
 
-        $validated = $request->validate([
-            'rating' => 'required|numeric|min:1|max:5',
-        ]);
-
         $insert = DB::table('ratings')->insert([
+            'id' => Uuid::uuid4()->toString(),
             'movie_id' => $id,
-            'author' => 'Anonymous',
-            'rating' => $validated['rating'],
+            'user_id' => getUserIdFromRequest($request),
+            'rating' => $rating,
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -227,7 +224,6 @@ Route::post('/movie/{id}/rating', function(Request $request, $id) {
         return response()->json([
             'status' => 'success',
         ]);
-
     } catch (Exception $e) {
         return response()->json([
             'status' => 'error',

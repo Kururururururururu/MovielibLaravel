@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ratings', function (Blueprint $table){
+        Schema::create('ratings', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->integer('user_id')->unsigned();
-//            $table->foreign('user_id')->references('id')->on('users');
+            //            $table->foreign('user_id')->references('id')->on('users');
             $table->integer('movie_id');
             $table->integer('rating');
             $table->timestamps();

@@ -18,6 +18,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     {{--    @vite('movie') --}}
+    @viteReactRefresh
+    @vite(['public/js/app.jsx', 'public/css/app.css/', 'public/js/pages/movie.index.jsx'])
 </head>
 
 <body>
@@ -30,6 +32,7 @@
         {{-- @include('comps.main.menu') --}}
         <!-- Main Body Start -->
         <div class="container">
+            <div id="movie-index" data="{{ json_encode($movie) }}"></div>
             <div class="movie-header">
                 <h1 class="movie-title"><a href="{{ $movie->homepage }}" class="movie-title-link">
                         {{ $movie->title }}

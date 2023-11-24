@@ -15,26 +15,28 @@ class RegisterController extends Controller
     }
 
 
-    function store(){
-        $data = request()->validate([
-            'name' => 'required|max:20',
-            'username' => 'required|max:20|unique:users',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:8|confirmed|max:255'
-        ]);
-        try{
+    function store()
+    {
+        try {
+            $data = request()->validate([
+                'name' => 'required|max:20',
+                'username' => 'required|max:20|unique:users',
+                'email' => 'required|email|max:255|unique:users',
+                'password' => 'required|min:8|confirmed|max:255'
+            ]);
             $user = new User();
-            $user->name = $data ['name'];
+            $user->name = $data['name'];
             $user->username = $data['username'];
             $user->email = $data['email'];
             $user->password = bcrypt($data['password']);
             $user->save();
             return redirect()->route('login.show')->with('success', 'Account created successfully');
-        } catch(\Exception $e){
-            return redirect()->back()->with('error', 'Something went wrong');
+        } catch (\Exception $e) {
+            if ($e instanceof \Illuminate\Validation\ValidationException) {
+                return response()->json(['errors' => $e->errors(), 'message' => $e->getMessage()], 422);
+            } else {
+                return response()->json(['message' => $e->getMessage()], 500);
+            }
         }
-
-        
-
     }
 }

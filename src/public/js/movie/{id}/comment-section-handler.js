@@ -1,8 +1,9 @@
+import axios from "axios";
 const commentForm = document.getElementById("comment-form");
 const commentInput = document.getElementById("comment-input");
 const commentBtn = document.getElementById("comment-btn");
 
-commentForm.addEventListener("submit", (e) => {
+commentForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const comment = commentInput.value;
 
@@ -11,57 +12,62 @@ commentForm.addEventListener("submit", (e) => {
     commentBtn.innerText = "Submitting...";
     updateAddNewComment("You", comment, new Date().toDateString());
     const movieId = new URLSearchParams(window.location.search).get("id");
-    fetch(`/api/movie/${movieId}/comment`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ comment, userId }),
-    })
-        .then((res) => res.json())
-        .then((res) => {
-            fetch(`/api/movie/${movieId}/comments`, {
-                cache: "no-cache",
-            })
-                .then((res) => res.json())
-                .then((res) => {
-                    commentsSection.innerText = "";
-                    if (res.status === "success") {
-                        if (res.comments.length === 0) {
-                            commentsSection.innerText = "No comments yet";
-                        } else {
-                            res.comments.forEach((comment) => {
-                                const name = comment.name;
-                                const content = comment.comment;
-                                const updatedAt = new Date(
-                                    comment.updated_at
-                                ).toDateString();
-                                const createdAt = new Date(
-                                    comment.created_at
-                                ).toDateString();
-                                updateAddNewComment(
-                                    name,
-                                    content,
-                                    updatedAt,
-                                    false
-                                );
-                            });
-                            commentBtn.disabled = false;
-                            commentBtn.innerText = "Submit";
-                            if (res.status === "success") {
-                                commentInput.value = "";
-                                commentInput.focus();
-                            }
-                        }
-                    }
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-        })
-        .catch((err) => {
-            console.log(err);
+
+    try {
+        const newCommentRes = await axios.post(
+            `/api/movie/${movieId}/comment`,
+            { comment, userId }
+        );
+
+        if (newCommentRes.data.status === "success") {
+            commentBtn.disabled = false;
+            commentBtn.innerText = "Submit";
+            commentInput.value = "";
+            commentInput.focus();
+        } else {
+            updateAddNewComment(
+                "You",
+                comment,
+                new Date().toDateString(),
+                false
+            );
+            commentBtn.disabled = false;
+            commentBtn.innerText = "Submit";
+            commentInput.value = "";
+            commentInput.focus();
+        }
+
+        const res = await axios.get(`/api/movie/${movieId}/comments`, {
+            cache: "no-cache",
         });
+
+        commentsSection.innerText = "";
+        if (res.data.status === "success") {
+            if (res.data.comments.length === 0) {
+                commentsSection.innerText = "No comments yet";
+            } else {
+                res.data.comments.forEach((comment) => {
+                    const name = comment.name;
+                    const content = comment.comment;
+                    const updatedAt = new Date(
+                        comment.updated_at
+                    ).toDateString();
+                    const createdAt = new Date(
+                        comment.created_at
+                    ).toDateString();
+                    updateAddNewComment(name, content, updatedAt, false);
+                });
+                commentBtn.disabled = false;
+                commentBtn.innerText = "Submit";
+                if (res.data.status === "success") {
+                    commentInput.value = "";
+                    commentInput.focus();
+                }
+            }
+        }
+    } catch (err) {
+        console.log(err);
+    }
 });
 
 function updateAddNewComment(author, content, updatedAt, optimistic = true) {

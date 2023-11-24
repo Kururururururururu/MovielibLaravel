@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +10,14 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/login.css') }}" rel="stylesheet">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
-    <!-- Javascript -->
-    <script src="{{ asset('js/login.js') }}"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    @viteReactRefresh
+    @vite(['public/js/app.jsx', 'public/css/app.css/', 'public/js/pages/login.jsx'])
+    <script>
+        const loginRoute = @json(route('login'));
+        // Now you can use the loginRoute variable in your JavaScript code
+        console.log(loginRoute);
+    </script>
 </head>
 
 <body>
@@ -19,20 +25,7 @@
         <!-- Header imported from ./comps/main/header.blade.php -->
         @include('comps.main.header')
     </header>
-    <main>
-        <form method="POST" action="{{ route('login') }}" class="loginform">
-            @csrf
-            <h1>Login</h1>
-            <pre>
-                
-            </pre>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required><br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required><br>
-            <input type="submit" id="registerbutton" value="Register">
-            <input type="submit" id="loginbutton" value="Login">
-        </form>
-    </main>
+    <div id="login"></div>
 </body>
+
 </html>

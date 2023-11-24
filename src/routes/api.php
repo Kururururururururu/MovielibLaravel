@@ -102,14 +102,16 @@ Route::post('/movie/{id}/comment', function (request $request, $id) {
             ], 400);
         }
 
-        $insert = DB::table('comments')->insert([
+        $comment_insert_params = [
             'id' => Uuid::uuid4()->toString(),
             'movie_id' => $id,
             'comment' => $comment,
             'user_id' => getUserIdFromRequest($request),
             'created_at' => now(),
             'updated_at' => now()
-        ]);
+        ];
+
+        $insert = DB::table('comments')->insert($comment_insert_params);
 
         if (!$insert) {
             return response()->json([
@@ -118,8 +120,12 @@ Route::post('/movie/{id}/comment', function (request $request, $id) {
             ], 500);
         }
 
+        $comment_insert_params['created_at'] = now()->toDateTimeString();
+        $comment_insert_params['updated_at'] = now()->toDateTimeString();
+
         return response()->json([
             'status' => 'success',
+            'comment' => $comment_insert_params
         ]);
     } catch (Exception $e) {
         return response()->json([
@@ -132,7 +138,6 @@ Route::post('/movie/{id}/comment', function (request $request, $id) {
 
 Route::delete('/movie/{id}/watchlist', function (request $request, $id) {
     try {
-
         $delete = DB::table('watchlist')->where('movie_id', $id)->where('user_id', getUserIdFromRequest($request))->delete();
 
         if (!$delete) {

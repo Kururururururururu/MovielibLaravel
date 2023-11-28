@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -12,19 +13,19 @@ class MovieController extends Controller
     {
 
         //Check the queried sorting method, and make sure it's an implemented method, if not default to vote_average.
-        if(!$request->filled('sort') || !in_array($request->input('sort'), ['popularity', 'primary_release_date', 'vote_average'])) {
+        if (!$request->filled('sort') || !in_array($request->input('sort'), ['popularity', 'primary_release_date', 'vote_average'])) {
             $sort = 'vote_average';
         } else {
             $sort = $request->input('sort');
         }
 
-        
-        
-        if(empty($page))    {
+
+
+        if (empty($page)) {
             $page = 1;
         }
 
-        $requestM = Request::create('/api/popular_movies/' . $page . '/' . $sort);              
+        $requestM = Request::create('/api/popular_movies/' . $page . '/' . $sort);
 
         $response = Route::dispatch($requestM);
 

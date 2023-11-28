@@ -20,7 +20,7 @@ class RegisterController extends Controller
             'name' => 'required|max:20',
             'username' => 'required|max:20|unique:users',
             'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:8|confirmed|max:20'
+            'password' => 'required|min:8|confirmed|max:255'
         ]);
         try{
             $user = new User();

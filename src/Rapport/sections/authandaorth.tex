@@ -1,7 +1,26 @@
 \section{Authentication and Authorization}
 
-This project's third and final task is to incorporate authentication and authorization capabilities.
-This section should clearly describe:
+In this sections, the primary objective is to describe the authentication and authorization mechanisms of the system. This helps fortify the security of the system and ensure that only the right users can access the right resources. \newline
+
+\textbf{Authentication:} is the process of verifying the identity of a user. In our system we have two distinct user categories 'Guest' and 'User'. The 'Guest' user is the default user and can only access the home page and the login page. The 'User' user is the authenticated user and can access all the pages in the system. \newline
+the implementation of the authentication is done by verifying the user's identity, the system asks for a username and password when you login. The system then checks if the username and password match the ones stored in the database. If they match, the user is authenticated and can access the system.
+if the username and password does not match anything in the systems database, the user is not authenticated and can only acces a limited set of resources on the page. \newline
+
+\textbf{Authorization:} now that the user is authenticated, the system needs to check if the user is authorized to access the resource he is trying to access. In our system we have two distinct user categories 'Guest' and 'User'. The 'Guest' user is the default user and can only access the home page and the login page. The 'User' user is the authenticated user and can access all the pages in the system.
+the implementation of the authorization is done by checking the user's role, the system checks if the user is a 'Guest' or a 'User'. This is done within the system to ensure that the user is authorized to access the resource he is trying to access. if the guest is trying to access something that he should not be able to access, the system will redirect him to the login page. 
+this will help fortify the security of the system and ensure that only the right users can access the right resources and as a result, the system will be more secure. \newline
+
+\textbf{Role Table:} 
+
+\begin{tabular}{|c|c|}
+    \hline
+    \textbf{Role} & \textbf{Actions} \\
+    \hline
+    User & Access all pages \\
+    \hline
+    Guest & Access home page and login page \\
+    \hline
+\end{tabular}
 
 \begin{itemize}
     \item Authentication: The different users of the system and how it is implemented

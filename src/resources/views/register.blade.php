@@ -12,7 +12,7 @@
         <link href="{{ asset('css/register.css') }}" rel="stylesheet">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         @viteReactRefresh
-        @vite(['public/js/app.jsx', 'public/css/app.css/', 'public/js/pages/register.jsx'])
+        @vite(['public/js/app.jsx', 'public/css/app.css', 'public/js/pages/register.jsx'])
         <script>
             const registerRoute = @json(route('register'));
             const loginRoute = @json(route('login'));

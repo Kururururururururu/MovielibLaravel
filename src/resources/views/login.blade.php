@@ -12,7 +12,7 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @viteReactRefresh
-    @vite(['public/js/app.jsx', 'public/css/app.css/', 'public/js/pages/login.jsx'])
+    @vite(['public/js/app.jsx', 'public/css/app.css', 'public/js/pages/login.jsx'])
     <script>
         const loginRoute = @json(route('login'));
         // Now you can use the loginRoute variable in your JavaScript code

@@ -19,7 +19,7 @@
         rel="stylesheet">
     {{--    @vite('movie') --}}
     @viteReactRefresh
-    @vite(['public/js/app.jsx', 'public/css/app.css/', 'public/js/pages/movie.index/movie.index.jsx'])
+    @vite(['public/js/app.jsx', 'public/css/app.css', 'public/js/pages/movie.index/movie.index.jsx'])
 </head>
 
 <body>

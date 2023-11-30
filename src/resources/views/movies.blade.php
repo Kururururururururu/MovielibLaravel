@@ -13,7 +13,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/movies.css') }}" rel="stylesheet">
     @viteReactRefresh
-    @vite(['public/js/app.jsx', 'public/css/app.css/', 'public/js/pages/movies.index/movies.index.jsx', 'public/js/components/menu.jsx'])
+    @vite(['public/js/app.jsx', 'public/css/app.css', 'public/js/pages/movies.index/movies.index.jsx', 'public/js/components/menu.jsx'])
 </head>
 
 <body>

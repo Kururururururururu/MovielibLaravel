@@ -80,7 +80,7 @@ Route::get('/movie/{id}/comments', function ($id) {
     $comments = DB::table('comments')
         ->join('users', 'comments.user_id', '=', 'users.id')
         ->where('comments.movie_id', $id)
-        ->select('comments.*', 'users.name')
+        ->select('comments.*', 'users.username')
         ->get();
 
     return response()->json([

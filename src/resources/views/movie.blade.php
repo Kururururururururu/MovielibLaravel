@@ -24,7 +24,8 @@
 
 <body>
     <div id="user-id" style="display:none;position:absolute" hidden data-user-id="{{ auth()->user()->id }}"></div>
-    <div id="user-name" style="display:none;position:absolute" hidden data-user-name="{{ auth()->user()->name }}"></div>
+    <div id="user-name" style="display:none;position:absolute" hidden data-user-name="{{ auth()->user()->username }}">
+    </div>
     {{-- {{dd($movie->rating)}} --}}
     <div class="outer-body-container">
         <!-- Header imported from ./comps/main/header.blade.php -->

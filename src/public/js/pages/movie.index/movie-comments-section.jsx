@@ -17,6 +17,8 @@ export function MovieCommentsSection({ data, active }) {
         fetchComments();
     }, [active]);
 
+    console.log(comments);
+
     return (
         <div id="comments">
             {isLoading ? (
@@ -27,7 +29,7 @@ export function MovieCommentsSection({ data, active }) {
                 comments.map((comment, index) => (
                     <MovieComment
                         key={index}
-                        author={comment.name}
+                        author={comment.username}
                         content={comment.comment}
                         updatedAt={comment.updated_at}
                     />

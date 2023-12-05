@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="{{ asset('js/carousel.js') }}"></script>
 </head>
 
 <body>
@@ -31,17 +31,17 @@
         <h1>Popular movies:</h1>
         <div class="top5">
             <button id="leftArrow" class="arrow-btn">&lt;</button>
-            @foreach ($movies->results as $index => $movie)
+            @foreach ($movies as $index => $movie)
                 @if ($index < 5)
-                    <a class="featured" href="{{ "/movie?id=" . $movie->id }}">
-                    <img class="movie-img" src="{{ @getimagesize("https://image.tmdb.org/t/p/w200/" . $movie->poster_path) ?
-                        "https://image.tmdb.org/t/p/w200/" . $movie->poster_path :
-                        asset('icons/movie_fallback_image.jpg')
-                    }}">
-                    <div class="featured-textbox">
-                        <p class="movie-title">{{ $movie->title }}</p>
-                        <p class="rating">{{ $movie->vote_average }}</p>
-                    </div>
+                    <a class="featured" href="{{ "/movie?id=" . $movie['id'] }}
+                        <img class="movie-img" src="{{ @getimagesize("https://image.tmdb.org/t/p/w200/" . $movie->poster_path) ?
+                            "https://image.tmdb.org/t/p/w200/" . $movie->poster_path :
+                            asset('icons/movie_fallback_image.jpg')
+                        }}">
+                        <div class="featured-textbox">
+                            <p class="movie-title">{{ $movie->title }}</p>
+                            <p class="rating">{{ $movie->vote_average }}</p>
+                        </div>
                     </a>
                 @endif
             @endforeach

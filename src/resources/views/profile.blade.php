@@ -22,9 +22,31 @@
     </header>
 
     <!-- Main -->
-    <section class="Profile-card">
-        this is the profile page
-    </section>
+    <main class="Profile-card">
+        <h1 class="page-header">PROFILE</h1>
+        <ul>
+            <li>
+                <label>Name:</label>
+                John Doe
+            </li>
+            <li>
+                <label>Username:</label>
+                johndoe123
+            </li>
+            <li>
+                <label>Email:</label>
+                johndoe@example.com
+            </li>
+            <li>
+                <label>Registration Date:</label>
+                January 1, 2023
+            </li>
+            <li>
+                <label>Rights:</label>
+                <span class="rights">Can comment</span> <!-- or use class="no-rights" for red color -->
+            </li>
+        </ul>
+    </main>
 
     <!-- Footer -->
     <footer>

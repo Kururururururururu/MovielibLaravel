@@ -54,6 +54,6 @@
     
     <!-- Footer -->
     <footer>
-        
+        @include('comps.main.footer')
     </footer>
 </body>

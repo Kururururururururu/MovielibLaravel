@@ -40,8 +40,55 @@
 }
 
 .footer {
+    position: fixed;
+    bottom: 0;
     width: 100%;
-    background-color: lime;
+    background-color: gray;
+}
+
+.footer-container {
+    background-color: inherit;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    display: flex;
+    justify-content: space-between; /* Adjust as needed */
+    align-items: flex-start;
+    border: 0px solid red;
+}
+
+.copyright-text {
+    font-size: 10px;
+}
+
+.col-12 {
+    border: 0px solid blue;
+    flex: 1; /* Allow each column to take equal space */
+    display: flex;
+    align-items: center;
+    margin: 4px;
+}
+
+.col-12:first-child {
+    justify-content: flex-start; /* Align the first column to the left */
+}
+
+.col-12:nth-child(2) {
+    justify-content: center; /* Center the second column */
+}
+
+.col-12:last-child {
+    justify-content: flex-end; /* Align the third column to the right */
+}
+
+.footer-icons {
+    color: inherit;
+    margin-right: 5px;
+}
+
+.footer-icons:last-child {
+    margin-right: 0px;
 }
 
 .menu {

@@ -15,7 +15,7 @@ class IndexController extends Controller
         $response = Route::dispatch($requestM);
 
         $movies = json_decode($response->getContent(), true);
-        $movies = array_slice($movies['results'], 0, 10);  // Limit the number of results to 10
+        $movies = array_slice($movies['results'], 0, 20);  // Limit the number of results to 20
         return view('index', ['movies' => $movies]);
     }
 }

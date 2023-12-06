@@ -44,6 +44,7 @@
     bottom: 0;
     width: 100%;
     background-color: gray;
+    margin-top: auto;
 }
 
 .footer-container {

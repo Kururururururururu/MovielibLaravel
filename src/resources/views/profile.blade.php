@@ -27,19 +27,19 @@
         <ul>
             <li>
                 <label>Name:</label>
-                John Doe
+                <p>{{$my_info->name}}</p>
             </li>
             <li>
                 <label>Username:</label>
-                johndoe123
+                <p>{{$my_info->username}}</p>
             </li>
             <li>
                 <label>Email:</label>
-                johndoe@example.com
+                <p>{{$my_info->email}}</p>
             </li>
             <li>
                 <label>Registration Date:</label>
-                January 1, 2023
+                <p>{{$my_info->created_at}}</p>
             </li>
             <li>
                 <label>Rights:</label>

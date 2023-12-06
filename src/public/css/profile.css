@@ -4,17 +4,12 @@ body {
     padding: 0;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-}
+
 
 main {
     width: 80%;
     margin: 20px auto;
-    margin-top: 80px;
+    margin-top: 110px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;

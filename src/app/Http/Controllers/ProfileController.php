@@ -9,11 +9,10 @@ use Illuminate\Support\Facades\Route;
 
 class ProfileController extends Controller {
     public function index() {
-        $userId = Auth::id();
+
+        $user = Auth::user();
         
-        $profile_info = DB::table('users')->where('id', $userId)->get();
-        
-        return view('profile', ['profile-info' => $profile_info]);
+        return view('profile', ['my_info' => $user]);
     }
     
 }

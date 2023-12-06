@@ -34,7 +34,7 @@ export default function Register() {
             return;
         }
 
-        if (!isValidPassword(value.password)) {
+        if (!isValidPassword(value.password, value.password_confirmation)) {
             console.error("Invalid password");
             return;
         }

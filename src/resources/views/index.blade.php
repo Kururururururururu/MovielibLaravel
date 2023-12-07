@@ -31,28 +31,17 @@
     </section>
 
     <section class="featured-movies">
-    <h1>Popular movies:</h1>
-    <div class="top5">
-        <div class="carousel-wrapper">
-            <div class="movieCarousel">
-                @foreach ($movies as $movie)
-                    <a class="featured" href="{{ "/movie?id=" . $movie['id'] }}">
-                        <img class="movie-img" src="{{ @getimagesize("https://image.tmdb.org/t/p/w200/" . $movie['poster_path']) ?
-                                "https://image.tmdb.org/t/p/w200/" . $movie['poster_path'] :
-                                asset('icons/movie_fallback_image.jpg')
-                        }}">
-                        <div class="featured-textbox">
-                            <p class="movie-title">{{ $movie['title'] }}</p>
-                            <p class="rating">{{ $movie['vote_average'] }}</p>
-                        </div>
-                    </a>
-                @endforeach
-            </div>
-            <button id="previous-slide" class="slide-button material-symbols-rounded">chevron_left</button>
-            <button id="next-slide" class="slide-button material-symbols-rounded">chevron_right</button>
+        <h1>Popular movies:</h1>
+        <div class="top5" data-movies="{{ json_encode($movies) }}">
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const container = document.querySelector('.top5');
+                    const moviesData = JSON.parse(container.getAttribute('data-movies'));
+                    const movieCarousel = new MovieCarousel(container, moviesData, 10);
+                });
+            </script>
         </div>
-    </div>
-</section>
+    </section>
 
 
     <!-- Main Body End -->

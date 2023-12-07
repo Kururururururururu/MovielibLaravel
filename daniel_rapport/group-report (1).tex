@@ -1,0 +1,60 @@
+\documentclass[letterpaper,twocolumn]{article}
+
+\usepackage{listings}
+\usepackage{pdflscape}
+\usepackage{booktabs}
+
+\newcommand{\myparagraph}[1]{\vspace{0.1cm}\noindent \textbf{\textit{#1.}}}
+
+\title{Individual Extension Report\\Web Technologies (E23): T510048101-1-E23}
+\author{Daniel Bermann Schmidt\\University of Southern Denmark}
+\date{\today}
+\begin{document}
+
+
+\maketitle
+
+\section{Introduction}
+
+\section{Reflections}
+
+\section{Individual Extension}
+
+In my invidual extension I have chosen to implement React into the project.
+React is a JavaScript library for building user interfaces.
+
+\subsection{Why React?}
+
+Building web UIs, it can be a challenge to keep the code organized as the project grows.
+React solves this problem by allowing you to split the UI into independent, reusable pieces.
+This can make the code more organized.
+
+\subsection{How and what did I implement with React?}
+
+I started implementing React by installing the npm packages `react' and `react-dom' into the project.
+Then I included the JSX page file into the Blade template, and a div with a specific ID, where the React component would be rendered.
+
+Our project was built on Laravel which is a server-side rendered application.
+A problem was how I could get data from the server into the React component without calling the API from the client-side.
+I solved this in the Blade template with `json\_encode()' in the data attribute of the HTML div for the React component, then parsing it again in the component.
+
+\subsection{Reflection on the implementation}
+
+I split the UI into components and made them reusable.
+This will make it easier to maintain.
+And by injecting the data into the data attribute,
+the React components will still display the correct data without calling the API on page load.
+
+\section{Security Reflections}
+
+In terms of security, we have login and register functionality.
+We don't store any passwords in plain text, but we hash them with bcrypt.
+
+
+\section{Performance \& Scalability Reflections}
+
+\section{Conclusions}
+
+
+\end{document}
+

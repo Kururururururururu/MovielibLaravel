@@ -7,8 +7,8 @@ export const useMovieComments = () => useContext(MovieCommentsContext);
 
 export function MovieCommentsProvider({ children, data }) {
     const [comments, setComments] = useState([]);
-    const [isLoading, setIsLoading] = useState(true); // Added loading state
-    const [optimisticComment, setOptimisticComment] = useState(null); // Added optimistic comment state
+    const [isLoading, setIsLoading] = useState(true);
+    const [optimisticComment, setOptimisticComment] = useState(null);
 
     const movieId = data.id;
     const userId = document.getElementById("user-id").dataset.userId;
@@ -20,20 +20,20 @@ export function MovieCommentsProvider({ children, data }) {
 
     const fetchComments = async () => {
         try {
-            setIsLoading(true); // Set loading state to true before fetching comments
+            setIsLoading(true);
             const response = await axios.get(`/api/movie/${movieId}/comments`);
             if (response.data.status === "success") {
                 const { comments } = response.data;
-                // Sort comments by date
+
                 comments.sort((a, b) => {
                     return new Date(b.updated_at) - new Date(a.updated_at);
                 });
                 setComments(comments);
             }
-            setIsLoading(false); // Set loading state to false after fetching comments
         } catch (error) {
             console.error("Error fetching comments:", error);
-            setIsLoading(false); // Set loading state to false in case of error
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -53,11 +53,11 @@ export function MovieCommentsProvider({ children, data }) {
                     },
                     ...prevComments,
                 ]);
-                setOptimisticComment(null); // Remove the optimistic comment
             }
         } catch (error) {
             console.error("Error adding comment:", error);
-            setOptimisticComment(null); // Remove the optimistic comment in case of error
+        } finally {
+            setOptimisticComment(null);
         }
     };
 
@@ -75,7 +75,6 @@ export function MovieCommentsProvider({ children, data }) {
         );
     };
 
-    // Expose the fetchComments function
     const exposedFunctions = {
         fetchComments,
         addComment,

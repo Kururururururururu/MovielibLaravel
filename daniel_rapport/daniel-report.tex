@@ -3,11 +3,13 @@
 \usepackage{listings}
 \usepackage{pdflscape}
 \usepackage{booktabs}
+\usepackage{minted}
+\usepackage{hyperref}
 
 \newcommand{\myparagraph}[1]{\vspace{0.1cm}\noindent \textbf{\textit{#1.}}}
 
 \title{Individual Extension Report\\Web Technologies (E23): T510048101-1-E23}
-\author{Daniel Bermann Schmidt\\University of Southern Denmark}
+\author{Daniel Bermann Schmidt\\University of Southern Denmark\\\href{https://github.com/Kururururururururu/MovielibLaravel/tree/Daniel_individuel_part}{GitHub Repository}}
 \date{\today}
 \begin{document}
 
@@ -34,9 +36,8 @@ This can make the code more organized.
 I started implementing React by installing the npm packages `react' and `react-dom' into the project.
 Then I included the JSX page file into the Blade template, and a div with a specific ID, where the React component would be rendered.
 
-Our project was built on Laravel which is a server-side rendered application.
-A problem was how I could get data from the server into the React component without calling the API from the client-side.
-I solved this in the Blade template with `json\_encode()' in the data attribute of the HTML div for the React component, then parsing it again in the component.
+A problem was getting data from the server into the React component without calling the API from the client-side, which would require an access\_token for the server to authenticate and know who called that API endpoint.
+I solved this in the Blade template with \mintinline{PHP}{json_encode()} in the data attribute of the HTML div for the React component, then parsing it again in the component.
 
 \subsection{Reflection on the implementation}
 
@@ -47,12 +48,20 @@ the React components will still display the correct data without calling the API
 
 \section{Security Reflections}
 
-In terms of security, we have login and register functionality.
-We don't store any passwords in plain text, but we hash them with bcrypt.
+In terms of security, we don't store any passwords in plain text, we salt and then hash them with bcrypt.
 
+We have middleware that checks if user is logged in and is authorized to access certain pages.
+On top of this we also have CSRF protection, a thing that's built into Laravel and easy to implement.
+
+We do have one major security flaw. On the site for a specific movie, we have comments. We didn't setup the authentication and authorization properly, so we don't have any access\_tokens on the user.
+This also means that there was no way of authenticating the user when called an API endpoint, that would require user data.
+We ended up making a hidden HTML div with a data-attribute with the user ID, and then using that ID on the client.
+The problem with this approach is that if you just change the user ID in the HTML, you can post comments as other users.
+Obviously if this was a real application, we would have to fix this and setup access\_token, authentication and authorization properly.
 
 
 \section{Performance \& Scalability Reflections}
+
 
 \section{Conclusions}
 

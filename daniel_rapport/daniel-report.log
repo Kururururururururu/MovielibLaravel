@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.11.30)  9 DEC 2023 12:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.11.30)  12 DEC 2023 16:09
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -378,40 +378,39 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 18.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 18.
-\openout4 = `daniel-report.pyg'.
-
- (_minted-daniel-report/default.pygstyle) (_minted-daniel-report/67177B31EB92F0C040B838223D6B805546EA62AB6B329C21FD976FEF082391DD.pygtex) [1{C:/Users/danielz/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
+ [1{C:/Users/danielz/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
 
 
 ]
-Underfull \hbox (badness 4479) in paragraph at lines 63--63
+\openout4 = `daniel-report.pyg'.
+
+ (_minted-daniel-report/default.pygstyle) (_minted-daniel-report/67177B31EB92F0C040B838223D6B805546EA62AB6B329C21FD976FEF082391DD.pygtex)
+Underfull \hbox (badness 4479) in paragraph at lines 85--85
 []\OT1/cmr/bx/n/14.4 Performance & Scal-a-bil-ity
  []
 
-[2
-
-] (daniel-report.aux)
+[2] (daniel-report.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
  ***********
 Package rerunfilecheck Info: File `daniel-report.out' has not changed.
-(rerunfilecheck)             Checksum: EE34B9EE91A4DB518A957965595AE0E2;1445.
+(rerunfilecheck)             Checksum: 54351BE21C83B42A4AEB8DE070DFC068;1921.
 runsystem(del daniel-report.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 13343 strings out of 474586
- 229824 string characters out of 5744736
- 1938558 words of memory out of 5000000
- 35345 multiletter control sequences out of 15000+600000
+ 13349 strings out of 474586
+ 229914 string characters out of 5744736
+ 1937558 words of memory out of 5000000
+ 35348 multiletter control sequences out of 15000+600000
  562184 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,8n,95p,403b,469s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,8n,95p,403b,471s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/danielz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/danielz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/danielz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/danielz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/danielz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on daniel-report.pdf (2 pages, 88553 bytes).
+Output written on daniel-report.pdf (2 pages, 94426 bytes).
 PDF statistics:
- 80 PDF objects out of 1000 (max. 8388607)
- 12 named destinations out of 1000 (max. 500000)
- 73 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 93 PDF objects out of 1000 (max. 8388607)
+ 15 named destinations out of 1000 (max. 500000)
+ 97 words of extra memory for PDF output out of 10000 (max. 10000000)
 

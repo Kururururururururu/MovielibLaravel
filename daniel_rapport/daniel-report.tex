@@ -17,8 +17,30 @@
 \maketitle
 
 \section{Introduction}
+In this report I will reflect on the group project, and then I will describe my individual extension, which is React.
+I will explain why I chose React, how I implemented it and how it has affected the project.
+I will also reflect on the security, performance and scalability of the project.
 
 \section{Reflections}
+\subsection{Front-end}
+
+The UI in the group project was done with Blade templates and most importantly not done with components.
+Therefore it isn't modular or resuable, and not generally a great approach for most applications as it limits the maintainability and scalability of the UI.
+Although it isn't the best implementation, it did do its job for displaying our data on the page.
+In terms of readability, it's generally readable for people who know Blade and if the UI isn't that complex or large.
+
+\subsection{Resource Management}
+When it comes to resource management.
+We actually started by moving all of the static files, such as CSS and JavaScript, over to the public folder instead of the resources folder, as the group thought this would make more sense.
+I didn't agree with this, as the resources folder is meant for things like CSS and JavaScript files, and the public folder is meant for things like images, fonts and other static files.
+But for the sake of the group, I went along with it. The most important part was that they were still in each their folder and organized.
+
+\subsection{Authentication \& Authorization}
+
+In terms of authentication and authorization, we have basic auth functionality and middleware.
+Even though we didn't have the mest implementation, it did solve the problem at hand, which was that we wanted to block certain pages for users who weren't logged in or authorized to access certain pages.
+We were somewhat happy with the implementation and we were happy that it worked the way we wanted it to for the most part.
+
 
 \section{Individual Extension}
 
@@ -62,8 +84,24 @@ Obviously if this was a real application, we would have to fix this and setup ac
 
 \section{Performance \& Scalability Reflections}
 
+As it relates to performance the system's reaction time from the POV of the user, we have optimistic updates of comments, loading states for comments, loading states for adding to watchlist and other things.
+In that aspect, at least from the user's POV, the system is very responsive.
+There are other things that could be done to improve performance, like caching, better database queries, pagination and so on.
+
+When it comes to scalability, we have not done a lot of things that make it easier to scale.
+In this individual extension, as I have implemented React, I have made the UI more modular and reusable, which makes the UI easier to maintain.
+But other things that could have been done to make it easier to scale, such as caching, load balancing, database replication etc, has not been done.
+
 
 \section{Conclusions}
+
+In conclusion, I have implemented React into the project, which makes the UI more modular and reusable.
+This, in return, makes the UI generally easier to maintain.
+
+In terms of security, we have basic auth and CSRF protection, but we have one major security flaw, where you can post comments as other users.
+And in terms of performance and scalability, there has not been a lot of work done to help in that regard.
+Although there are certain aspects in the application that makes if feel more reponsive from the user's POV.
+Scalability would probably also be the most important thing to do, after fixing the security flaw.
 
 
 \end{document}

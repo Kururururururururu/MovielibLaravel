@@ -4,7 +4,7 @@
         <div class="header-right">
             <a href="/movies" class="nav-link">Movies</a>
             @if (Auth::check())
-                <a href="{{ url('/dashboard') }}" class="nav-link">Watchlist</a>
+                <a href="{{ url('/watchlist') }}" class="nav-link">Watchlist</a>
             @endif
             <a href="#" class="nav-link">About Us</a>
             <a href="#" class="nav-link">Contact Us</a>

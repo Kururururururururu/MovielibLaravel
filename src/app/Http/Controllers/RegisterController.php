@@ -17,10 +17,10 @@ class RegisterController extends Controller
 
     function store(){
         $data = request()->validate([
-            'name' => 'required|max:20',
-            'username' => 'required|max:20|unique:users',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:8|confirmed|max:255'
+            'name' => 'required',
+            'username' => 'required',
+            'email' => 'required|email',
+            'password' => 'required'
         ]);
         try{
             $user = new User();

@@ -1,3 +1,5 @@
+console.log("Virker lortet?");
+
 document.addEventListener("DOMContentLoaded", function() {
   const signinButton = document.getElementById("signinButton");
 
@@ -5,5 +7,4 @@ document.addEventListener("DOMContentLoaded", function() {
     event.preventDefault();
     window.location.href = "/login";
   });
-
 });

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
@@ -102,11 +103,13 @@ Route::post('/movie/{id}/comment', function (request $request, $id) {
             ], 400);
         }
 
+        $userId = Auth::id();
+
         $comment_insert_params = [
             'id' => Uuid::uuid4()->toString(),
             'movie_id' => $id,
             'comment' => $comment,
-            'user_id' => getUserIdFromRequest($request),
+            'user_id' => $userId,
             'created_at' => now(),
             'updated_at' => now()
         ];
@@ -138,7 +141,9 @@ Route::post('/movie/{id}/comment', function (request $request, $id) {
 
 Route::delete('/movie/{id}/watchlist', function (request $request, $id) {
     try {
-        $delete = DB::table('watchlist')->where('movie_id', $id)->where('user_id', getUserIdFromRequest($request))->delete();
+        $userId = Auth::id();
+
+        $delete = DB::table('watchlist')->where('movie_id', $id)->where('user_id', $userId)->delete();
 
         if (!$delete) {
             return response()->json([
@@ -170,9 +175,10 @@ function getUserIdFromRequest($request)
 Route::post('/movie/{id}/watchlist', function (Request $request, $id) {
     try {
 
+        $userId = Auth::id();
         $insert = DB::table('watchlist')->insert([
             'id' => Uuid::uuid4()->toString(),
-            'user_id' => getUserIdFromRequest($request),
+            'user_id' => $userId,
             'movie_id' => $id,
             'created_at' => now(),
             'updated_at' => now()
@@ -210,10 +216,12 @@ Route::post('/movie/{id}/rating', function (request $request, $id) {
             ], 400);
         }
 
+        $userId = Auth::id();
+
         $insert = DB::table('ratings')->insert([
             'id' => Uuid::uuid4()->toString(),
             'movie_id' => $id,
-            'user_id' => getUserIdFromRequest($request),
+            'user_id' => $userId,
             'rating' => $rating,
             'created_at' => now(),
             'updated_at' => now()

@@ -11,10 +11,10 @@ export function MovieCommentsProvider({ children, data }) {
     const [optimisticComment, setOptimisticComment] = useState(null);
 
     const movieId = data.id;
-    const userId = document.getElementById("user-id").dataset.userId;
+    // const userId = document.getElementById("user-id").dataset.userId;
     const userName = document.getElementById("user-name").dataset.userName;
 
-    if (!movieId || !userId) {
+    if (!movieId) {
         throw new Error("Movie or user ID not found");
     }
 
@@ -42,7 +42,7 @@ export function MovieCommentsProvider({ children, data }) {
             setOptimisticComment(comment);
             const response = await axios.post(`/api/movie/${movieId}/comment`, {
                 comment,
-                userId,
+                // userId,
             });
             if (response.data.status === "success") {
                 const { comment: newComment } = response.data;

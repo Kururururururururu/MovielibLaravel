@@ -7,13 +7,13 @@ import axios from "axios";
  */
 const handleWatchlistAction = async (method) => {
     const movieId = new URLSearchParams(window.location.search).get("id");
-    const userId = document.getElementById("user-id").dataset.userId;
+    // const userId = document.getElementById("user-id").dataset.userId;
 
     try {
         const response = await axios({
             method,
             url: `/api/movie/${movieId}/watchlist`,
-            data: { userId },
+            // data: { userId },
         });
         return response.data;
     } catch (error) {

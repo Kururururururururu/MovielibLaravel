@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <div id="user-id" style="display:none;position:absolute" hidden data-user-id="{{ auth()->user()->id }}"></div>
+    {{-- <div id="user-id" style="display:none;position:absolute" hidden data-user-id="{{ auth()->user()->id }}"></div> --}}
     <div id="user-name" style="display:none;position:absolute" hidden data-user-name="{{ auth()->user()->username }}">
     </div>
     {{-- {{dd($movie->rating)}} --}}

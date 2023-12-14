@@ -13,14 +13,18 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name'); 
+            $table->string('name');
             $table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('password');
             $table->timestamps();
+            $table->boolean('is_admin')->default(false);
+            $table->boolean('is_banned')->default(false);
         });
 
         Schema::table('comments', function (Blueprint $table) {
+            $table->boolean('is_admin')->default(false);
+            $table->boolean('is_banned')->default(false);
             $table->foreign('user_id')->references('id')->on('users');
         });
 

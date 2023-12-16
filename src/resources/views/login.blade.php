@@ -17,7 +17,7 @@
         <!-- Header imported from ./comps/main/header.blade.php -->
         @include('comps.main.header')
     </header>
-    <main>
+    <main class="main">
         <form method="POST" action="{{ route('login') }}" class="loginform">
             @csrf
             <h1>Login</h1>

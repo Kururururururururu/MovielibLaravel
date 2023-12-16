@@ -22,7 +22,8 @@ Route::get('/login',[\App\Http\Controllers\LoginController::class,'index'])->nam
 Route::get('/register',[\App\Http\Controllers\RegisterController::class,'index'])->name('register.show');
 
 Route::get('/watchlist', [\App\Http\Controllers\WatchlistController::class,'index'])->name('watchlist.show')->middleware('auth');
-Route::get('/profile', [\App\Http\Controllers\ProfileController::class,'index'])->name('profile.show')->middleware('auth');
+Route::get('/profile/{username?}', [\App\Http\Controllers\ProfileController::class,'index'])->name('profile.show')->middleware('auth');
+Route::post('/profile/user/{id}/ban', [\App\Http\Controllers\ProfileController::class, 'toggleBan'])->name('user.ban')->middleware('auth');
 
 Route::get('/movie', [\App\Http\Controllers\MovieController::class,'specific'])->name('movie.show');
 

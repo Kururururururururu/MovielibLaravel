@@ -1,0 +1,9 @@
+Delete comments:
+ - [if admin -> show delete-button]
+ - [if delete-button is pressed -> corresponding comment gets deleted from the database]
+
+Block Users:
+ - [if admin -> names on comments = clickable]
+ - [if names are clicked -> redirect to corresponding user's profile-page]
+ - [if admin + if on profile-page -> ban/unban button visable]
+ - [if ban/unban-button is clicked -> update is_banned in database for the corresponding user]

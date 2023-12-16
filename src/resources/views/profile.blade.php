@@ -5,12 +5,16 @@
     <!-- Title -->
     <title>Profile</title>
 
+    <!-- Meta tags -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!-- Styles -->
     <link href="{{ asset('css/css-reset.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/profile.css') }}" rel="stylesheet">
 
     <!-- Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{ asset('js/profile.js') }}"></script>
 
 </head>
@@ -27,23 +31,30 @@
         <ul>
             <li>
                 <label>Name:</label>
-                <p>{{$my_info->name}}</p>
+                <p>{{$page_owner->name}}</p>
             </li>
             <li>
                 <label>Username:</label>
-                <p>{{$my_info->username}}</p>
+                <p>{{$page_owner->username}}</p>
             </li>
             <li>
                 <label>Email:</label>
-                <p>{{$my_info->email}}</p>
+                <p>{{$page_owner->email}}</p>
             </li>
             <li>
                 <label>Registration Date:</label>
-                <p>{{$my_info->created_at}}</p>
+                <p>{{$page_owner->created_at}}</p>
             </li>
             <li>
                 <label>Rights:</label>
-                <span class="rights">Can comment</span> <!-- or use class="no-rights" for red color -->
+                <p class="rights" style="color: {{ $page_owner->is_banned ? 'red' : 'green' }}">
+                    {{ $page_owner->is_banned ? 'Cannot comment' : 'Can comment' }}
+                </p>
+                <br>
+                @if ($page_visitor->is_admin)
+                    <button class="ban-button" onclick="toggleBan({{ $page_owner->id }})" style="color: {{ $page_owner->is_banned ? 'green' : 'red' }}">
+                        {{ $page_owner->is_banned ? 'Unban' : 'Ban' }}</button>
+                @endif
             </li>
         </ul>
     </main>

@@ -47,7 +47,7 @@
         <input type="submit" value="Create Movie Rater account" id="registerButton">
         <div class="Alreadycreated">
         <label for="Accountexist">Already have an account?</label>
-        <button class="link" id="signinButton">Sign in</button>
+        <a class="link" id="signinButton">Sign in</a>
         </div>
     </div>
     </form>

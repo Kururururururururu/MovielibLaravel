@@ -1,6 +1,6 @@
 \section{Authentication and Authorization}
 
-In this sections, the primary objective is to describe the authentication and authorization mechanisms of the system. This helps fortify the security of the system and ensure that only the right users can access the right resources. \newline
+To help fortify the systems overall security, it is very important that the system knows which users has acces to surtain thing and users that doesnt have access this is done by implementing authorization and authentication on our system. \newline
 
 \textbf{Authentication:} is the process of verifying the identity of a user. In our system we have two distinct user categories 'Guest' and 'User'. The 'Guest' user is the default user and can only access the home page and the login page. The 'User' user is the authenticated user and can access all the pages in the system. \newline
 the implementation of the authentication is done by verifying the user's identity, the system asks for a username and password when you login. The system then checks if the username and password match the ones stored in the database. If they match, the user is authenticated and can access the system.
@@ -10,24 +10,16 @@ if the username and password does not match anything in the systems database, th
 the implementation of the authorization is done by checking the user's role, the system checks if the user is a 'Guest' or a 'User'. This is done within the system to ensure that the user is authorized to access the resource he is trying to access. if the guest is trying to access something that he should not be able to access, the system will redirect him to the login page. 
 this will help fortify the security of the system and ensure that only the right users can access the right resources and as a result, the system will be more secure. \newline
 
-\textbf{Role Table:} 
-
-\begin{tabular}{|c|c|}
-    \hline
-    \textbf{Role} & \textbf{Actions} \\
-    \hline
-    User & Access all pages \\
-    \hline
-    Guest & Access home page and login page \\
-    \hline
-\end{tabular}
+To give a better indication of the different user roles we have in our system, we have:
 
 \begin{itemize}
-    \item Authentication: The different users of the system and how it is implemented
-    \item Authorization: Summarize the access of the different users in the system and how it is implemented
-    \item Role table: Include a role table associating actions over the system (you can think of them as use cases) and users that can perform these actions.
+    \item \textbf{Guest:} The default user, can only access the home page and the login page.
+    \item \textbf{User:} The authenticated user, can access all the pages in the system.
 \end{itemize}
 
-\myparagraph{Resources} Lecture 7.
+By giving our website diffrent user roles, we can ensure that the system, is safe against incomming attacks. 
+it alos makes it so, that people can't acces infomation in the system that they should not be able to see without having created a user. \newline
+it also works the other way around, only people that are created on the system, can comment on the different movies on the website, while the unauthorized users can only see the diffrent comments. 
+If we where to develp the system further we could add some more user roles, with differnt authorizations, we could make an admin users, this user has access to everything including the profiles of the different users. 
+With the way we have implemented the authorization and authentication in our system, we can easily scale the diffrent users roles, without any complications. \newline
 
-\myparagraph{Length} 2 columns.

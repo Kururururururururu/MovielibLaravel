@@ -15,9 +15,7 @@
 </head>
 
 <body>
-    <header>
-        @include('comps.main.header')
-    </header>
+    @include('comps.main.header')
     <!-- Header imported from ./comps/main/header.blade.php -->
 
     <nav class="navbar"></nav>
@@ -31,18 +29,18 @@
         <h1>Popular movies:</h1>
         <div class="top5">
             @foreach ($movies->results as $index => $movie)
-            @if ($index < 5)
-            <a class="featured" href="{{ "/movie?id=" . $movie->id }}">
-                <img class="movie-img" src="{{ @getimagesize("https://image.tmdb.org/t/p/w200/" . $movie->poster_path) ?
-                        "https://image.tmdb.org/t/p/w200/" . $movie->poster_path :
-                        asset('icons/movie_fallback_image.jpg')
-                    }}">
-                <div class="featured-textbox">
-                    <p class="movie-title">{{ $movie->title }}</p>
-                    <p class="rating">{{ $movie->vote_average }}</p>
-                </div>
-            </a>
-            @endif
+                @if ($index < 5)
+                    <a class="featured" href="{{ '/movie?id=' . $movie->id }}">
+                        <img class="movie-img"
+                            src="{{ @getimagesize('https://image.tmdb.org/t/p/w200/' . $movie->poster_path)
+                                ? 'https://image.tmdb.org/t/p/w200/' . $movie->poster_path
+                                : asset('icons/movie_fallback_image.jpg') }}">
+                        <div class="featured-textbox">
+                            <p class="movie-title">{{ $movie->title }}</p>
+                            <p class="rating">{{ $movie->vote_average }}</p>
+                        </div>
+                    </a>
+                @endif
             @endforeach
         </div>
     </section>

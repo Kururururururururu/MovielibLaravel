@@ -29,7 +29,7 @@
         <!-- Menu imported from ./comps/main/menu.blade.php -->
         {{-- @include('comps.main.menu') --}}
         <!-- Main Body Start -->
-        <div class="container">
+        <main class="container">
             <div class="movie-header">
                 <h1 class="movie-title"><a href="{{ $movie->homepage }}" class="movie-title-link">
                         {{ $movie->title }}
@@ -186,8 +186,8 @@
                     </section>
                 </div>
             </div>
-        </div>
-        <!-- Main Body End -->
+    </div>
+    <!-- Main Body End -->
     </div>
     <!-- Footer imported from ./comps/main/footer.blade.php -->
     @include('comps.main.footer')

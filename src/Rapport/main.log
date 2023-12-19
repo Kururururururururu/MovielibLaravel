@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.11.30)  19 DEC 2023 20:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.11.30)  19 DEC 2023 21:49
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -319,10 +319,81 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 22.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 22.
- (sections/introduction.tex) (sections/frontend.tex) (sections/recourse.tex [1{C:/Users/danielz/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
+ (sections/introduction.tex) (sections/frontend.tex
+Underfull \hbox (badness 1117) in paragraph at lines 3--6
+\OT1/cmr/m/n/10 we have uti-lized Blade tem-plates, which is the
+ []
 
 
-]) (sections/authandaorth.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--6
+
+ []
+
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 11.
+(C:\Users\danielz\AppData\Local\Programs\MiKTeX\tex/latex/base\omlcmr.fd
+File: omlcmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 11.
+
+Underfull \hbox (badness 1264) in paragraph at lines 7--12
+\OT1/cmr/m/n/10 are ac-ces-si-ble, read-able for search en-gines, and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--12
+
+ []
+
+
+Underfull \hbox (badness 3098) in paragraph at lines 13--17
+\OT1/cmr/m/n/10 tags pro-vides more de-scrip-tive and mean-ing-ful
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--17
+
+ []
+
+[1{C:/Users/danielz/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 18--21
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--25
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--30
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--38
+
+ []
+
+
+Underfull \hbox (badness 2435) in paragraph at lines 39--43
+[]\OT1/cmr/m/n/10 The way that you in-cor-po-rate JavaScript into
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--43
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--52
+
+ []
+
+) (sections/recourse.tex [2]) (sections/authandaorth.tex
 Underfull \hbox (badness 1163) in paragraph at lines 1--1
 []\OT1/cmr/bx/n/14.4 Authentication and Au-tho-
  []
@@ -347,10 +418,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--25
 
  []
 
-) (sections/conclusion.tex
-Underfull \vbox (badness 3872) has occurred while \output is active []
-
- [2]) [3
+) (sections/conclusion.tex [3]) [4
 
 ] (main.aux)
  ***********
@@ -361,17 +429,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 7A8CD3E1DFF59123B7E3DB5A9F421D0D;629.
  ) 
 Here is how much of TeX's memory you used:
- 11433 strings out of 474586
- 185880 string characters out of 5744736
- 1939558 words of memory out of 5000000
- 33474 multiletter control sequences out of 15000+600000
+ 11454 strings out of 474586
+ 186261 string characters out of 5744736
+ 1940558 words of memory out of 5000000
+ 33491 multiletter control sequences out of 15000+600000
  563057 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,8n,95p,601b,436s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\danielz\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/danielz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/danielz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/danielz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/danielz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/danielz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/danielz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/danielz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (3 pages, 108752 bytes).
+ 89i,8n,95p,601b,434s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\danielz\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/danielz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/danielz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/danielz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/danielz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/danielz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/danielz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/danielz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/danielz/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on main.pdf (4 pages, 123595 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
- 9 named destinations out of 1000 (max. 500000)
+ 91 PDF objects out of 1000 (max. 8388607)
+ 10 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

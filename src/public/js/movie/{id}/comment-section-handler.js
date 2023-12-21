@@ -55,12 +55,12 @@ commentForm.addEventListener("submit", (e) => {
                                 }
 
                                 updateAddNewComment(
-                                    deleteButtonHTML,
-                                    user_id,
                                     name,
                                     content,
                                     updatedAt,
-                                    false
+                                    false,
+                                    deleteButtonHTML,
+                                    user_id
                                 );
 
                             });
@@ -82,7 +82,7 @@ commentForm.addEventListener("submit", (e) => {
         });
 });
 
-function updateAddNewComment(deleteButtonHTML, user_id, author, content, updatedAt, optimistic = true) {
+function updateAddNewComment(author, content, updatedAt, optimistic = true, deleteButtonHTML = '', user_id = null) {
     const newComment = `
                     <div class="comment ${optimistic && "optimistic-comment"}">
                         <div class="comment-author">

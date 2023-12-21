@@ -76,6 +76,26 @@ class MovieController extends Controller
 
         $movie->rating = collect($request)->average('rating');
 
-        return view('movie', ['movie' => $movie]);
+        $page_visitor_isadmin = Auth::user()->is_admin;
+        $page_visitor_isbanned = Auth::user()->is_banned;
+
+        return view('movie', [
+            'movie' => $movie, 
+            'page_visitor_isadmin' => $page_visitor_isadmin,
+            'page_visitor_isbanned' => $page_visitor_isbanned
+        ]);
     }
+
+    public function destroy_comment($id){
+
+        $deleted = DB::table('comments')->where('id', $id)->delete();
+
+        if ($deleted > 0) {
+            return response()->json(['success' => true]);
+        } else {
+            return response()->json(['success' => false]);
+        }
+
+    }
+
 }

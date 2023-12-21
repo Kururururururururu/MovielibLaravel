@@ -25,24 +25,39 @@ commentTabBtn.addEventListener("click", () => {
                     res.comments.forEach((comment) => {
                         const name = comment.name;
                         const content = comment.comment;
+                        const user_id = comment.user_id;
+                        const comment_id = comment.id;
                         const updatedAt = new Date(
                             comment.updated_at
                         ).toDateString();
                         const createdAt = new Date(
                             comment.created_at
                         ).toDateString();
-
+                        
+                        let deleteButtonHTML = ``;
+                        console.log(comment_id);
+                        if (window.page_visitor_isadmin) {
+                            deleteButtonHTML = `
+                            <button 
+                              class="comment-delete-btn"
+                              id="delete-btn-${comment_id}"
+                              onclick="delete_comment('${comment_id}')"
+                              >Delete Comment</button>
+                            `;
+                        }
+                        
                         commentsSection.innerHTML += `
                     <div class="comment">
                         <div class="comment-author">
-                            <span class="comment-author-name">${name}</span>
+                            <a href="/profile/${user_id}" class="comment-author-name">${name}</a>
                             <span class="comment-author-date">${updatedAt}</span>
+                            ${deleteButtonHTML}
                         </div>
                         <div class="comment-content">
                             ${content}
                         </div>
                     </div>
-                `;
+                    `;
                     });
                 }
             }

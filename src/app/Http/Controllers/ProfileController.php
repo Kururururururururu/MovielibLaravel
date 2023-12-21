@@ -8,13 +8,13 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 class ProfileController extends Controller {
-    public function index($username = null) {
+    public function index($user_id = null) {
 
         $visitor = Auth::user();
-        if ($username == null) {
+        if ($user_id == null) {
             $page_owner = Auth::user();
         } else {
-            $page_owner = DB::table('users')->where('username', $username)->first();
+            $page_owner = DB::table('users')->where('id', $user_id)->first();
         }
 
         if ($page_owner === null) {
@@ -27,15 +27,15 @@ class ProfileController extends Controller {
     public function toggleBan($id) {
         
         $active_user = Auth::user()->is_admin;
-        if ($active_user == 0) {
+        if (!$active_user) {
             return redirect('/');
         }
 
         $user = DB::table('users')->where('id', $id)->first();
-        if ($user->is_banned == 0) {
-            DB::table('users')->where('id', $id)->update(['is_banned' => 1]);
+        if (!$user->is_banned) {
+            DB::table('users')->where('id', $id)->update(['is_banned' => true]);
         } else {
-            DB::table('users')->where('id', $id)->update(['is_banned' => 0]);
+            DB::table('users')->where('id', $id)->update(['is_banned' => false]);
         }
 
         // Get the updated user

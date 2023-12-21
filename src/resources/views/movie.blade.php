@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta property="og:title" content="{{ $movie->title }}">
     <meta property="og:description" content="{{ $movie->overview }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ $movie->title }} | Movie Rater</title>
 
     <!-- Styles -->
@@ -18,6 +19,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     {{--    @vite('movie') --}}
+
+    <!-- scripts -->
+    <script src="{{ asset('js/movie/{id}/delete-comment.js') }}"></script>
+
 </head>
 
 <body>
@@ -176,12 +181,17 @@
                     </div>
                     <div class="movie-info-extra" id="comments_tab" style="display: none">
                         <h1 class="movie-info-extra-title">Comments</h1>
+                        @if ($page_visitor_isbanned)
+                            <p>You cannot comment while banned.</p><br>
+                        @else
                         <form class="comment-form" id="comment-form">
                             <label for="comment-input">Commenting as <code>{{ auth()->user()->name }}</code></label>
                             <textarea name="comment" id="comment-input" class="comment-form-textarea" placeholder="Write a comment..."></textarea>
                             <button class="comment-form-btn" type="submit" id="comment-btn">Submit</button>
                         </form>
+                        @endif
                         <div id="comments">
+                            
                         </div>
                     </div>
                 </div>
@@ -194,6 +204,10 @@
     <script>
         const userId = document.getElementById("user-id").dataset.userId;
     </script>
+    <script>
+        window.page_visitor_isadmin = {!! json_encode($page_visitor_isadmin) !!};
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="{{ asset('js/movie/{id}/tabs-section-handler.js') }}"></script>
     <script defer src="{{ asset('js/movie/{id}/comment-section-handler.js') }}"></script>
     <script defer src="{{ asset('js/movie/{id}/add-to-watchlist-btn.js') }}"></script>

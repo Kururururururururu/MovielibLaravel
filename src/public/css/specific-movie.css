@@ -309,13 +309,28 @@
 
 .comment-author-name {
     font-weight: bold;
+    color: white;
 }
 
 .common-author-date {
     font-weight: 400;
     color: var(--muted-foreground);
 }
+.comment-delete-btn {
+    padding: 0.5rem 1rem;
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    background-color: red;
+    color: white;
+}
 
+.comment-delete-btn:hover {
+    background-color: darkred;
+}
 .comment-author {
     display: flex;
     flex-direction: row;

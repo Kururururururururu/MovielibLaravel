@@ -125,6 +125,7 @@ Route::post('/movie/{id}/comment', function (request $request, $id) {
 
         $comment_insert_params['created_at'] = now()->toDateTimeString();
         $comment_insert_params['updated_at'] = now()->toDateTimeString();
+        $comment_insert_params['username'] = Auth::user()->username;
 
         return response()->json([
             'status' => 'success',

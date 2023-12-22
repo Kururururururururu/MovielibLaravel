@@ -88,6 +88,11 @@ class MovieController extends Controller
 
     public function destroy_comment($id){
 
+        $active_user = Auth::user()->is_admin;
+        if (!$active_user) {
+            return redirect('/');
+        }
+
         $deleted = DB::table('comments')->where('id', $id)->delete();
 
         if ($deleted > 0) {

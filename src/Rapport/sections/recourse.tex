@@ -1,14 +1,81 @@
 \section{Resource Management}
 
-The second task of this project is to build a resource management.
-A resource is a model of an object in your system, and it could be anything: movies, music albums, pets, etc.
-This section should clearly describe the management of the chosen resource: the CRUD (Create-Read-Update-Delete) operations associated with that resource:
+%The second task of this project is to build a resource management.
+%A resource is a model of an object in your system, and it could be anything: movies, music albums, pets, etc.
+%This section should clearly describe the management of the chosen resource: the CRUD (Create-Read-Update-Delete) operations associated with that resource:
+For this project, we have chosen to build a resource management for movies as we're creating a movie library.
+We're using two types of resource management: one for the TMDB API and one for the database.
+The TMDB API is used for fetching the movie data from the TMDB API, where the databased is used for storing users, their watchlists, comments and ratings.
 
+The resource management is technically described in the following subsections.
+\textbf{API Routes:}
+The routes for the API are defined in the \texttt{routes/api.php} file and defines how the system interacts with the API to fetch the movie data. The TMDB API routes are used for fetching the movie data, such as the movie title, description, poster, cast, etc. to display on various occasions within the website. Where our own internal API is used for various movie specific CRUD operations within the application. 
+The internal and external API uses HTTP GET, POST and DELETE requests to fetch a more specific response, and is capable of fetching:
+\textit{TMDB API}
 \begin{itemize}
-    \item Technically describe the resource (ie, the model)
-    \item Technically describe how the CRUD operations are implemented
+    \item \textbf{GET Sorted list of movies for a specific page:}
+    \begin{itemize}
+        \item [Endpoint:] '/popular\_movies/\{page\}/\{sort\}'
+        \item [Parameters:] \textit{page} and \textit{sort}
+        \item [Description:] This endpoint is used for fetching a list of movies, sorted by a specific parameter, for a specific page. The endpoint returns a list of movies, hereunder the movie title, description, poster, cast, etc.
+    \end{itemize}
+    \item \textbf{GET a specific movie:}
+    \begin{itemize}
+        \item [Endpoint:] '/movie/\{id\}'
+        \item [Parameters:] \textit{id}
+        \item [Description:] This endpoint is used for fetching a specific movie, and its data. The endpoint returns a specific movie, hereunder the movie title, description, poster, cast, etc.
+    \end{itemize}
+    \item \textbf{GET All genres:}
+    \begin{itemize}
+        \item [Endpoint:] '/genres'
+        \item [Parameters:] None
+        \item [Description:] This endpoint is used for fetching all genres. The endpoint returns a list of genres, hereunder the genre id and name.
+    \end{itemize}
 \end{itemize}
 
-\myparagraph{Resources} Lectures 4 to 6.
+%\begin{itemize}
+%    \item \textit{GET} a list of movies, hereunder the movie title, description, poster, cast, etc. (This can be sorted by the title, release date, popularity, genre, etc.)
+%    \item \textit{GET} a specific movie, and its data.
+%\end{itemize}
+%\textit{Internal API}
+\textit{Internal API}
+\begin{itemize}
+    \item \textbf{GET comments for a Movie}
+    \begin{itemize}
+        \item [Endpoint:] '/movie/\{id\}/comments'
+        \item [Parameters:] \textit{id}
+        \item [Description:] This endpoint is used for fetching all comments for a specific movie. The endpoint returns a list of comments, hereunder the comment id, user id, movie id, time, etc.
+    \end{itemize}
+    \item \textbf{POST or DELETE a Movie from watchlist}
+    \begin{itemize}
+        \item [Endpoint:] '/movie/\{id\}/watchlist'
+        \item [Parameters:] \textit{id}
+        \item [Description:] This endpoint is used for adding or removing a movie from a user's watchlist.
+    \end{itemize}
+\end{itemize}
+%\begin{itemize}
+%    \item \textit{GET} comment(s) and data belonging to that comment (userId, movieId, time,etc.).
+%    \item \textit{POST} or \textit{DELETE} a movie to a user's watchlist, herunder the belonging information (userId, movieId, time, etc.).
+%    \item 
+%\end{itemize}
 
-\myparagraph{Length} 2 columns.
+\textbf{Database Tables:}
+The database tables are defined in the \texttt{database/migrations} folder and defines the structure of the database. The databased is used for storing the user's watchlist, comments and ratings within the application.
+
+\textbf{CRUD Operations:}
+The CRUD operations are defined in the \texttt{app/Http/Controllers} folder and defines how the system interacts with the database.
+The CRUD operations are used for:
+\begin{itemize}
+    \item \textit{C}creating a new user, adding to the user's watchlist and adding the user's comments and ratings on movies within the application.
+    \item \textit{R}eading the user's watchlist, comments and ratings.
+    \item \textit{U}pdating a user, hereunder updating their profile information, updating their watchlist, comments and ratings.
+    \item \textit{D}eleting a user and their profile and deleting the user's watchlist, comments and ratings.
+\end{itemize}
+%\begin{itemize}
+%    \item Technically describe the resource (ie, the model)
+%    \item Technically describe how the CRUD operations are implemented
+%\end{itemize}
+
+%\myparagraph{Resources} Lectures 4 to 6.
+
+%\myparagraph{Length} 2 columns.

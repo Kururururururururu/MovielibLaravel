@@ -1,14 +1,12 @@
 
 h1 {
     text-align: center;
-    margin: 5%,50%;
+    margin: 0%,50%;
     color: white;
     font-size: 55px;
     font-weight: bold;
-    top: 100px;
+    top: 200px;
     font-style: inherit;
-    margin-top: 5%;
-    margin-bottom: 5%;
     
 }
 .create{
@@ -23,7 +21,6 @@ form {
     padding: 30px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 8%;
 }
 label {
     display: block;
@@ -59,17 +56,16 @@ input[type="submit"]:hover, input[type="register"]:hover {
     background-color: var(--primary);
 }
 
-a.link:hover {
+button.link:hover {
     text-decoration: underline;
-    font-weight: bold;
-
 }
 
-a.link {
-    color: white ;
+
+button.link {
+    color: white !important;
+    font-weight: bold;
     background: none;
     border: none;
-    margin-left: 10px;
 }
 
 div.Alreadycreated {

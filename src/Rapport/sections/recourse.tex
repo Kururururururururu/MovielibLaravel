@@ -1,16 +1,20 @@
 \section{Resource Management}
-
+ 
+% [kommentar 1] skal dette slettes?
 %The second task of this project is to build a resource management.
 %A resource is a model of an object in your system, and it could be anything: movies, music albums, pets, etc.
 %This section should clearly describe the management of the chosen resource: the CRUD (Create-Read-Update-Delete) operations associated with that resource:
-For this project, we have chosen to build a resource management for movies as we're creating a movie library.
-We're using two types of resource management: one for the TMDB API and one for the database.
+
+% [kommentar 2] Omformuler næste linje ("to build a resource management" det kan man ikke sige) 
+For this project, we have chosen to build a resource management for movies as we are creating a movie library.
+We are using two types of resource management: One for the TMDB API and one for the database.
+% [kommentar 3] Omformuler næste linje (is the API fetching data from it self?)
 The TMDB API is used for fetching the movie data from the TMDB API, where the databased is used for storing users, their watchlists, comments and ratings.
 
-The resource management is technically described in the following subsections.
+The resource management is described technically in the following subsections. \newline
 \textbf{API Routes:}
-The routes for the API are defined in the \texttt{routes/api.php} file and defines how the system interacts with the API to fetch the movie data. The TMDB API routes are used for fetching the movie data, such as the movie title, description, poster, cast, etc. to display on various occasions within the website. Where our own internal API is used for various movie specific CRUD operations within the application. 
-The internal and external API uses HTTP GET, POST and DELETE requests to fetch a more specific response, and is capable of fetching:
+The routes for the API are defined in the \texttt{routes/api.php} file and define how the system interacts with the API to fetch the movie data. The TMDB API routes are used for fetching the movie data, such as the movie title, description, poster, cast, and so on, to display on various occasions within the website. Where our own internal API is used for various movie specific CRUD operations within the application. 
+The internal and external API use HTTP GET, POST and DELETE requests to fetch a more specific response, and is capable of fetching: \newline
 \textit{TMDB API} \newline\newline
 \textbf{GET Sorted list of movies for a specific page:}
 \begin{description}
@@ -28,8 +32,8 @@ The internal and external API uses HTTP GET, POST and DELETE requests to fetch a
 \begin{description}
     \item [Endpoint:] '/genres'
     \item [Parameters:] None
-    \item [Description:] This endpoint is used for fetching all genres. The endpoint returns a list of genres, hereunder the genre id and name.
-\end{description} 
+    \item [Description:] This endpoint is used for fetching all genres. The endpoint returns a list of genres, hereunder the genre id and name. \newline
+\end{description}
 
 %\begin{itemize}
 %    \item \textit{GET} a list of movies, hereunder the movie title, description, poster, cast, etc. (This can be sorted by the title, release date, popularity, genre, etc.)
@@ -57,15 +61,16 @@ The internal and external API uses HTTP GET, POST and DELETE requests to fetch a
 %\end{itemize}
 
 \textbf{Database Tables:}
-The database tables are defined in the \texttt{database/migrations} folder and defines the structure of the database. The databased is used for storing the user's watchlist, comments and ratings within the application.
+The database tables are defined in the \texttt{database/migrations} folder and define the structure of the database. The database is used for storing the user's watchlist, comments, and ratings within the application.
 
 \textbf{CRUD Operations:}
-The CRUD operations are defined in the \texttt{app/Http/Controllers} folder and defines how the system interacts with the database.
+The CRUD operations are defined in the \texttt{app/Http/Controllers} folder and define how the system interacts with the database.
 \textbf{The CRUD operations are used for:}
 \begin{itemize}
-    \item \textit{C}creating a new user, adding to the user's watchlist and adding the user's comments and ratings on movies within the application.
+    \item \textit{C}reating a new user, adding to the user's watchlist and adding the user's comments and ratings on movies within the application.
     \item \textit{R}eading the user's watchlist, comments and ratings.
-    \item \textit{U}pdating a user, hereunder updating their profile information, updating their watchlist, comments and ratings.
+    \item \textit{U}pdating a user, hereunder updating their profile information, their watchlist, comments, and ratings.
+% [kommentar 4] Omformuler "Deleting" (kan vi ikke kun slette film fra en watchliste?)
     \item \textit{D}eleting a user and their profile and deleting the user's watchlist, comments and ratings.
 \end{itemize}
 %\begin{itemize}

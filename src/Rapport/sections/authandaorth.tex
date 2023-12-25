@@ -2,25 +2,25 @@
 
 To help fortify the systems overall security, it is very
 important that the system knows which users has
-access to certain things and can identify users that doesn't have
+access to certain things and can identify users that does not have
 access to the given resource. This is done by implementing authorization
 and authentication on our system.
 
 \textbf{Authentication:} 
 
-Is the process of verifying the
+Authetication the process of verifying the
 identity of a user. In our system we have two distinct
 user categories "Guest" and "User". The "Guest" user
 is the default user and can only access the home
 page and the login page. The "User" user is the
-authenticated user and can access all the pages in
+authenticated user that can access all the pages in
 the system.
-the implementation of the authentication is done by
-verifying the user's identity, the system asks for a
+The implementation of the authentication is done by
+verifying the user's identity. The system asks for a
 username and password when you login. The system
 then checks if the username and password match the
 ones stored in the database. If they match, the user
-is authenticated and can access the system. if the
+is authenticated and can access the system. If the
 username and password do not match anything in
 the systems database, the user is not authenticated
 and can only access a limited set of resources on the
@@ -28,7 +28,7 @@ page. \newline
 
 \textbf{Authorization:} 
 
-Now that the user is authenticated,
+When the user is authenticated,
 the system needs to check if the user is authorized
 to access the resource, he is trying to access. In
 our system we have two distinct user categories
@@ -36,8 +36,8 @@ our system we have two distinct user categories
 user and can only access the home page and the
 login page. The "User" user is the authenticated
 user and can access all the pages in the system.
-the implementation of the authorization is done by
-checking the user's role, the system checks if the
+The implementation of the authorization is done by
+checking the user's role. The system checks if the
 user is a "Guest" or a "User". This is done within
 the system to ensure that the user is authorized to
 access the resource he is trying to access. If the
@@ -45,28 +45,28 @@ guest is trying to access something that he should
 not be able to access, the system will redirect him to
 the login page. This will help fortify the security of
 the system and ensure that only the right users can
-access the right resources and as a result, the system
+access the right resources. As a result, the system
 will be more secure.
 
+% [kommentar 1] Skal dette med linje 51-63? Det er 99% gentagelse af det ovenfor.
 To give a better indication of the different user roles we have in our system, we have:
-
-
 \begin{itemize}
     \item \textbf{Guest:} The default user, can only access the home page and the login page.
     \item \textbf{User:} The authenticated user, can access all the pages in the system.
 \end{itemize}
 
+% [kommentar 2] giver eller implementere vi different user roles
 By giving our website different user roles, we can
 ensure that the system, is safe against incoming
-attacks. it also makes it so, that people can't access
+attacks. It also makes it so, that people can not access
 information in the system that they should not be
 able to see without having created a user.
-it also works the other way around, only people
+It also works the other way around. Only people
 that are created on the system, can comment on the
 different movies on the website, while the unauthorized users can only see the different comments. If
 we were to develop the system further we could add
-some more user roles, with different authorizations,
-we could make an admin user, this user has access
+some more user roles with different authorizations.
+We could for example make an admin user, which has access
 to everything including the profiles of the different
 users. With the way we have implemented the
 authorization and authentication in our system, we

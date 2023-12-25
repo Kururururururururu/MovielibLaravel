@@ -14,9 +14,9 @@ The TMDB API is used for fetching the movie data from the TMDB API, where the da
 The resource management is described technically in the following subsections. \newline
 \textbf{API Routes:}
 The routes for the API are defined in the \texttt{routes/api.php} file and define how the system interacts with the API to fetch the movie data. The TMDB API routes are used for fetching the movie data, such as the movie title, description, poster, cast, and so on, to display on various occasions within the website. Where our own internal API is used for various movie specific CRUD operations within the application. 
-The internal and external API use HTTP GET, POST and DELETE requests to fetch a more specific response, and is capable of fetching: \newline
-\textit{TMDB API} \newline\newline
-\textbf{GET Sorted list of movies for a specific page:}
+The internal and external API use HTTP GET, POST and DELETE requests to fetch a more specific response, and is capable of fetching: \newline\newline
+\textit{TMDB API} 
+\textbf{\newline GET Sorted list of movies for a specific page:}
 \begin{description}
     \item[Endpoint:] '/popular\_movies/\{page\}/\{sort\}'
     \item[Parameters:] \textit{page} and \textit{sort}
@@ -32,7 +32,7 @@ The internal and external API use HTTP GET, POST and DELETE requests to fetch a 
 \begin{description}
     \item [Endpoint:] '/genres'
     \item [Parameters:] None
-    \item [Description:] This endpoint is used for fetching all genres. The endpoint returns a list of genres, hereunder the genre id and name. \newline
+    \item [Description:] This endpoint is used for fetching all genres. The endpoint returns a list of genres, hereunder the genre id and name.
 \end{description}
 
 %\begin{itemize}
@@ -41,7 +41,7 @@ The internal and external API use HTTP GET, POST and DELETE requests to fetch a 
 %\end{itemize}
 %\textit{Internal API}
 \textit{Internal API}
-\textbf{GET comments for a Movie:}
+\textbf{\newline GET comments for a Movie:}
 \begin{description}
     \item [Endpoint:] '/movie/\{id\}/comments'
     \item [Parameters:] \textit{id}

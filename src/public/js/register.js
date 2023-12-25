@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", function() {
       return false;
     }
 
-    if (name.length > 20) {
-      alert('Name must be less than 20 characters.');
+    if (name.length > 30) {
+      alert('Name must be less than 30 characters.');
       return false;
     }
 

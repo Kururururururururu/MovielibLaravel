@@ -72,6 +72,8 @@ a.link {
 }
 
 div.Alreadycreated {
+    text-align: center;
+    
 
     display: inline-flex;
 }

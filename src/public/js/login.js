@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function() {
         return;
       }
 
-    
     });
 
     function isValidUsername(username) {

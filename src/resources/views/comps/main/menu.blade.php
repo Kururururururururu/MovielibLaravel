@@ -1,6 +1,6 @@
 @section('menu')
     <nav class="menu">
-        <script src="{{ asset('js/movie_list/menu_sort_selector.js') }}"></script>
+        <script src="{{ asset('js/menu.js') }}"></script>
         <pre>
 
         </pre>

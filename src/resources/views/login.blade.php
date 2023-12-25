@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <!-- Styles -->
@@ -13,10 +14,8 @@
 </head>
 
 <body>
-    <header>
-        <!-- Header imported from ./comps/main/header.blade.php -->
-        @include('comps.main.header')
-    </header>
+    <!-- Header imported from ./comps/main/header.blade.php -->
+    @include('comps.main.header')
     <main>
         <form method="POST" action="{{ route('login') }}" class="loginform">
             @csrf
@@ -33,4 +32,5 @@
         </form>
     </main>
 </body>
+
 </html>

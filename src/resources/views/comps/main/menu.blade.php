@@ -1,19 +1,20 @@
 @section('menu')
-    <div class="menu">
+    <nav class="menu">
         <script src="{{ asset('js/movie_list/menu_sort_selector.js') }}"></script>
         <pre>
 
         </pre>
         <div class="searchbar-box">
-            <input type="text" placeholder="Search" class="searchbar">
-            <button class="searchbutton primary-button" id=""><img src="{{ asset('icons/search.svg') }}" alt="search" class="icon"></button>
+            <input type="search" placeholder="Search" class="searchbar">
+            <button class="searchbutton primary-button" id=""><img src="{{ asset('icons/search.svg') }}" alt="search"
+                    class="icon"></button>
         </div>
         <pre>
 
 
         </pre>
         <div class="sort-by">
-            <h1 class="text-2">Sort by</h1>
+            <h2 class="text-2">Sort by</h2>
             <pre>
 
             </pre>
@@ -37,19 +38,19 @@
 
         </pre>
         <div class="tag">
-            <h1 class="text-2">Genres</h1>
+            <h2 class="text-2">Genres</h2>
             <pre>
 
             </pre>
-            
+
             <div class="tag-list">
-                @foreach($genres->genres as $genre)
+                @foreach ($genres->genres as $genre)
                     <div class="tag-item">
-                        <input type="checkbox" id="{{$genre->id}}" name="{{$genre->name}}">
-                        <label for="{{$genre->id}}">{{$genre->name}}</label>
+                        <input type="checkbox" id="{{ $genre->id }}" name="{{ $genre->name }}">
+                        <label for="{{ $genre->id }}">{{ $genre->name }}</label>
                     </div>
                 @endforeach
-            </div>        
+            </div>
         </div>
         <button class="primary-button" id="">Apply</button>
-    </div>
+    </nav>

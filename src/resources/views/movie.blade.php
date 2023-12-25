@@ -29,7 +29,7 @@
         <!-- Menu imported from ./comps/main/menu.blade.php -->
         {{-- @include('comps.main.menu') --}}
         <!-- Main Body Start -->
-        <div class="container">
+        <main class="container">
             <div class="movie-header">
                 <h1 class="movie-title"><a href="{{ $movie->homepage }}" class="movie-title-link">
                         {{ $movie->title }}
@@ -57,7 +57,7 @@
                         alt="{{ $movie->title }}" loading="lazy" class="movie-poster">
                     <figcaption class="movie-poster-caption">{{ $movie->tagline }}</figcaption>
                 </figure>
-                <div class="movie-info">
+                <section class="movie-info">
                     <div class="movie-info-item">
                         <p class="movie-info-item-title">Release Date:</p>
                         <p class="movie-info-item-value">{{ $movie->release_date }}</p>
@@ -140,7 +140,7 @@
                             Remove from Watchlist
                         @endif
                     </button>
-                </div>
+                </section>
             </div>
             <hr class="divider" />
             <div class="movie-info-page-2-container">
@@ -156,7 +156,7 @@
                 </div>
                 <hr class="divider" />
                 <div>
-                    <div class="movie-info-extra" id="more_information_tab">
+                    <section class="movie-info-extra" id="more_information_tab">
                         <h1 class="movie-info-extra-title">Cast</h1>
                         <div class="movie-casts">
                             @foreach ($movie->credits->cast as $person)
@@ -173,8 +173,8 @@
                                 </div>
                             @endforeach
                         </div>
-                    </div>
-                    <div class="movie-info-extra" id="comments_tab" style="display: none">
+                    </section>
+                    <section class="movie-info-extra" id="comments_tab" style="display: none">
                         <h1 class="movie-info-extra-title">Comments</h1>
                         <form class="comment-form" id="comment-form">
                             <label for="comment-input">Commenting as <code>{{ auth()->user()->name }}</code></label>
@@ -183,11 +183,11 @@
                         </form>
                         <div id="comments">
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
-        </div>
-        <!-- Main Body End -->
+    </div>
+    <!-- Main Body End -->
     </div>
     <!-- Footer imported from ./comps/main/footer.blade.php -->
     @include('comps.main.footer')

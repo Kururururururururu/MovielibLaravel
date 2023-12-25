@@ -1,6 +1,6 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.11.23)  17 DEC 2023 14:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.11.23)  23 DEC 2023 10:42
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **"c:/Users/Lukas Andersen/Documents/GitHub/MovielibLaravel/src/Rapport/main.tex"
@@ -262,24 +262,24 @@ File: l3backend-pdftex.def 2023-11-09 L3 backend support: PDF output (pdfTeX)
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
@@ -288,7 +288,7 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 19.
+Package hyperref Info: Link coloring OFF on input line 21.
  (main.out) (main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
@@ -314,43 +314,135 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 22.
+(Font)              <12> on input line 26.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 22.
+(Font)              <8> on input line 26.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 22.
- (sections/introduction.tex) (sections/frontend.tex) (sections/recourse.tex [1{C:/Users/Lukas Andersen/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
-
-
-]) (sections/authandaorth.tex
-Underfull \hbox (badness 1163) in paragraph at lines 1--1
-[]\OT1/cmr/bx/n/14.4 Authentication and Au-tho-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
+(Font)              <6> on input line 26.
+ (sections/introduction.tex) (sections/frontend.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--1
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5--8
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
+
+ []
+
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 12.
+(C:\Users\Lukas Andersen\AppData\Local\Programs\MiKTeX\tex/latex/base\omlcmr.fd
+File: omlcmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 12.
+
+Underfull \hbox (badness 3884) in paragraph at lines 8--13
+\OT1/cmr/m/n/10 it eas-ier for de-vel-op-ers to un-der-stand page
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--13
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--12
+Underfull \hbox (badness 10000) in paragraph at lines 14--18
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 20--25
+Underfull \hbox (badness 10000) in paragraph at lines 19--23
 
  []
 
-) (sections/conclusion.tex
-Underfull \vbox (badness 3872) has occurred while \output is active []
 
- [2]) [3
+Underfull \hbox (badness 2189) in paragraph at lines 24--32
+\OT1/cmr/m/n/10 they were com-mon com-po-nents across pages.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--32
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1{C:/Users/Lukas Andersen/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 33--37
+
+ []
+
+) (sections/recourse.tex
+Underfull \hbox (badness 10000) in paragraph at lines 38--1
+
+ []
+
+
+Underfull \hbox (badness 1577) in paragraph at lines 10--16
+\OT1/cmr/m/n/10 in the fol-low-ing sub-sec-tions. \OT1/cmr/bx/n/10 API Routes:
+ []
+
+
+Underfull \hbox (badness 2529) in paragraph at lines 10--16
+\OT1/cmr/m/n/10 The routes for the API are de-fined in the
+ []
+
+
+Underfull \hbox (badness 1769) in paragraph at lines 10--16
+\OT1/cmr/m/n/10 API uses HTTP GET, POST and DELETE
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--16
+
+ []
+
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 17.
+(C:\Users\Lukas Andersen\AppData\Local\Programs\MiKTeX\tex/latex/base\omscmr.fd
+File: omscmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 17.
+ [2]) (sections/authandaorth.tex
+Underfull \hbox (badness 1087) in paragraph at lines 11--28
+\OT1/cmr/m/n/10 The sys-tem then checks if the user-name and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--28
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--75
+
+ []
+
+[3]) (sections/conclusion.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--11
+
+ []
+
+)
+Underfull \hbox (badness 1189) in paragraph at lines 13--32
+[]\OT1/cmr/m/n/10 Future work on the ap-pli-ca-tion could in-clude
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--32
+
+ []
+
+[4
 
 ] (main.aux)
  ***********
@@ -358,20 +450,20 @@ LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: BAF40EC121491393E1DC4F2A4B965B4A;634.
+(rerunfilecheck)             Checksum: 4E9CBEF5019D8C75FFFA3C44F352CEBF;836.
  ) 
 Here is how much of TeX's memory you used:
- 11433 strings out of 474587
- 186927 string characters out of 5741409
- 1939558 words of memory out of 5000000
- 33473 multiletter control sequences out of 15000+600000
- 563057 words of font info for 52 fonts, out of 8000000 for 9000
+ 11484 strings out of 474587
+ 187900 string characters out of 5741409
+ 1942558 words of memory out of 5000000
+ 33515 multiletter control sequences out of 15000+600000
+ 563173 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,8n,95p,603b,436s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Lukas Andersen\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Lukas Andersen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Lukas Andersen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lukas Andersen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/Lukas Andersen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lukas Andersen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lukas Andersen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lukas Andersen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (3 pages, 108593 bytes).
+ 89i,8n,95p,603b,498s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Lukas Andersen\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Lukas Andersen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Lukas Andersen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lukas Andersen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lukas Andersen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lukas Andersen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lukas Andersen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lukas Andersen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lukas Andersen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Lukas Andersen/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on main.pdf (4 pages, 141101 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
- 9 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 104 PDF objects out of 1000 (max. 8388607)
+ 12 named destinations out of 1000 (max. 500000)
+ 57 words of extra memory for PDF output out of 10000 (max. 10000000)
 

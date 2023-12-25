@@ -17,9 +17,7 @@
 
 <body>
     <!-- Header imported from ./comps/main/header.blade.php -->
-    <header>
-        @include('comps.main.header')
-    </header>
+    @include('comps.main.header')
 
     <!-- Main -->
     <main class="Profile-card">
@@ -27,19 +25,19 @@
         <ul>
             <li>
                 <label>Name:</label>
-                <p>{{$my_info->name}}</p>
+                <p>{{ $my_info->name }}</p>
             </li>
             <li>
                 <label>Username:</label>
-                <p>{{$my_info->username}}</p>
+                <p>{{ $my_info->username }}</p>
             </li>
             <li>
                 <label>Email:</label>
-                <p>{{$my_info->email}}</p>
+                <p>{{ $my_info->email }}</p>
             </li>
             <li>
                 <label>Registration Date:</label>
-                <p>{{$my_info->created_at}}</p>
+                <p>{{ $my_info->created_at }}</p>
             </li>
             <li>
                 <label>Rights:</label>
@@ -49,9 +47,7 @@
     </main>
 
     <!-- Footer -->
-    <footer>
-        @include('comps.main.footer')
-    </footer>
+    @include('comps.main.footer')
 
 </body>
 

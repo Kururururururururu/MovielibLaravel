@@ -1,4 +1,4 @@
-\documentclass[letterpaper,twocolumn]{article}
+\documentclass[letterpaper,twocolumn,11pt]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage{caption} 
@@ -7,22 +7,26 @@
 \usepackage{longtable}
 \usepackage{listings}
 \usepackage{pdflscape}
+\usepackage{titlesec}
 \usepackage{indentfirst}
 \usepackage{booktabs}
 \newcommand{\myparagraph}[1]{\vspace{0.1cm}\noindent \textbf{\textit{#1.}}}
 \setlength{\parindent}{0pt}
+\titlespacing{\section}{1pt}{\parskip}{-\parskip}
 
 \setlength{\columnsep}{1cm}
 
-\title{\vspace{-3cm}Web Technologies Project Report}
-\author{Group 4}
-\date{28/12/2023}
 
 \begin{document}
 
 
+\input{sections/frontside.tex}
+\thispagestyle{empty}
+\clearpage
+\pagenumbering{arabic}
 
-\maketitle
+
+
 
 \input{sections/introduction.tex}
 \input{sections/frontend.tex}

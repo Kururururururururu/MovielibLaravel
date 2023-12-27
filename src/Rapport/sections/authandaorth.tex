@@ -12,8 +12,8 @@ and authentication on our system. \newline
 Authetication the process of verifying the
 identity of a user. In our system we have two distinct
 user categories "Guest" and "User". The "Guest" user
-is the default user and can only access the home
-page and the login page. The "User" user is the
+is the default user and can only access a limited amount of resources.
+The "User" user is the
 authenticated user that can access all the pages in
 the system.
 The implementation of the authentication is done by
@@ -34,7 +34,7 @@ the system needs to check if the user is authorized
 to access the resource, he is trying to access. In
 our system we have two distinct user categories
 \begin{itemize}
-    \item \textbf{Guest:} The default user, can only access the home page and the login page.
+    \item \textbf{Guest:} The default user, has a limitation on access.
     \item \textbf{User:} The authenticated user, can access all the pages in the system.
 \end{itemize}
 The system checks if the
@@ -48,13 +48,13 @@ the system and ensure that only the right users can
 access the right resources. As a result, the system
 will be more secure.
 
-By implementing our website different user roles, we can
-ensure it so, that people can not access
+By incorporating different user roles on our website, we can
+ensure, that people can not access
 information in the system that they should not be
 able to see without having created a user.
 It also works the other way around. Only people
 that are created on the system, can comment on the
-different movies on the website, while the unauthorized users can only see the different comments. If
+different movies on the website, while the unauthorized users has no access. If
 we were to develop the system further we could add
 some more user roles with different authorizations.
 We could for example make an admin user, which has access

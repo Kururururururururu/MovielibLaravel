@@ -1,10 +1,10 @@
 @section('footer')
-    <div id="footer">
+    <footer id="footer">
         <div id="tos-social" class="site-info navbar">
             <div class="footer-container">
                 <div class="col-12">
                     <p class="copyright-text">
-                        Movie Rater © 2023<br>
+                        Movie Rater &copy; 2023<br>
                         The Ultimate Film Appreciator
                     </p>
                 </div>
@@ -29,5 +29,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </footer>
 @endsection

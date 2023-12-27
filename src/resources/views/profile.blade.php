@@ -21,9 +21,7 @@
 
 <body>
     <!-- Header imported from ./comps/main/header.blade.php -->
-    <header>
-        @include('comps.main.header')
-    </header>
+    @include('comps.main.header')
 
     <!-- Main -->
     <main class="Profile-card">
@@ -60,9 +58,7 @@
     </main>
 
     <!-- Footer -->
-    <footer>
-        @include('comps.main.footer')
-    </footer>
+    @include('comps.main.footer')
 
 </body>
 

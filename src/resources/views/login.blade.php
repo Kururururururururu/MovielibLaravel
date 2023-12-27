@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <!-- Styles -->
@@ -33,4 +34,5 @@
         </form>
     </main>
 </body>
+
 </html>

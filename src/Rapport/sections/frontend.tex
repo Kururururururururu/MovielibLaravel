@@ -1,14 +1,45 @@
-\section{Frontend}
+\section{Front-end}
 
-This project's first task is to build your application's front-end side.
-This section should clearly describe the technical implementation of the work put into building the front-end:
 
-\begin{itemize}
-    \item Technically describe the use of HTML 5: which HTML tags do you use, where, and why
-    \item Technically describe the use of CSS: why and how you use CSS (including interesting selectors/declarations and how it is incorporated in the application)
-    \item Technically describe the use of JavaScript: why and how you use it in your application (including interesting behaviors and how they are incorporated into the application)
-\end{itemize}
+We have developed the front-end of the application using HTML, CSS, and JavaScript.
+However, Blade templates have also been used since we are working with Laravel which is a framework that incorporates them.
+Blade allows you to use PHP within your HTML, which can be very handy in order to display data from APIs, databases or other sources.\newline
 
-\myparagraph{Resources} Lectures 1 to 3.
+\textbf{HTML 5:} \newline
+HTML 5 is the most recent version of HTML, This version introduces some new semantic tags.
+Semantic tags can enhance accessibility and SEO.
+Also, they make it easier for developers to understand page structure as well as the purpose of each section.
+For example, \textless{}header\textgreater{}, \textless{}nav\textgreater{}, \textless{}main\textgreater{}, and \textless{}footer\textgreater{} among others have been used to define our pages’ header, navigation bar, and footer.\newline
 
-\myparagraph{Length} 2 columns.
+In our project, we tried to utilize these semantic tags as best as possible in order to identify different sections on the page.
+These include movie information and comments when viewing a specific movie on its own page.
+This makes it easy to understand each section’s purpose by giving an overview of how each section has been divided into.
+Using more descriptive markup such as the \textless{}section\textgreater{} instead of generic \textless{}div\textgreater{} tags provides more meaningful semantics.\newline
+
+\textbf{CSS:} \newline
+CSS is used for setting up the style and visuals of the HTML page elements,
+and these define features such as the layout, colors, and fonts as well as the overall page structure.
+It improves the visual appearance and can also make it user-friendly with things like animations on hover, transitions or a number of other CSS3 capabilities that may indicate to a user that an element can be clicked.\newline
+
+In our application we did not want to use the default styles that the browser has, so we used CSS to style the page and application to what we wanted.
+However, CSS can become difficult to navigate through and maintain.
+The reason behind this is, that you never know if a style has been used somewhere else in the application.
+This can cause inadvertent changes in other sections of the app which are often hard to debug.
+% [kommentar 1] Omformuler næste linje
+For this reason especially being a group project, which will most of the time make it even more difficult, we had different CSS files for different pages unless they were common components across pages.
+So, as far as that problem was concerned we also made sure that descriptive class names were used only along with targeting IDs and classes that were specific to the page.
+% [kommentar 2] Omformuler næste linje
+This way others would remain unchanged by mistake.
+% [kommentar 3] Omformuler næste linje
+There is a downside to doing this, however, as it can lead to a lot of duplicate code, which can also make it hard to maintain, as it is likely that at some point, there will be unused styles in those CSS files.
+We weighed the pros and cons of this approach and decided that it was the best approach for our project.\newline
+
+\textbf{JavaScript:} \newline
+JavaScript is a programming language that helps make web pages interactive and dynamic. Moreover, it allows for adding or removing elements from the page, changing the styles of elements as well as making API calls.
+Since Laravel is a server-side application most of our data are fetched from the server on page load.
+% [kommentar 4] Omformuler næste linje (måske bryd sætningen ned?)
+But we also have some dynamic elements on the page such as the movies' comment section, which can be fetched from the server when a user clicks on the comment button by making an API call to the server, the watchlist button for correctly displaying the current state of the movies' existence in a user's watchlist, and rating system used to rate movies from 1 to 5 stars.\newline
+
+The way that JavaScript is incorporated into HTML is by using the \textless{}script\textgreater{} tag. It is not only used for including JavaScript files but can also be used for writing JavaScript code directly in the HTML file.
+We have gone with the former approach, because it is less complex to maintain and debug since you can easily see which JavaScript files are included on the page.
+Nevertheless, we have also utilized the latter option, but only for minor scripts that are unique to that specific page.\newline

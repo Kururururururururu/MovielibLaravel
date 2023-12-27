@@ -5,12 +5,12 @@
  *
  * @class
  * @param {HTMLElement} container - The HTML container element for the carousel.
- * @param {Array} movies - The array of movies to display in the carousel. The array of movies should each include: id, poster_path, title, and vote_average.
+ * @param {Array} movies - The array of movies to display in the carousel. Each movie in the array should include: id, poster_path, title, and vote_average.
  * @param {Number} [autoScroll=0] - Determines how often the carousel will autoscroll in seconds. Set to 0 to disable autoscrolling.
 */
 
-class MovieCarousel {
-    constructor(container, movies, autoScroll = 0) {
+class MovieCarousel {   // MovieCarousel class for creating a movie carousel
+    constructor(container, movies, autoScroll = 0) { 
         this.container = container;
         this.movies = movies;
         this.autoScroll = autoScroll;
@@ -88,21 +88,20 @@ class MovieCarousel {
         this.restartAutoScroll();
     }
 
-    addEventListeners(movieCarousel, buttons) {
+    addEventListeners(movieCarousel, buttons) {   // Adds event listeners for the movie carousel buttons
         const maxScroll = movieCarousel.scrollWidth;
 
         buttons.forEach(button => {
             button.addEventListener('click', () => {
-                const direction = button.id === 'previous-slide' ? -1 : 1;
-                const currentScroll = movieCarousel.scrollLeft + movieCarousel.clientWidth;
-                if (
+                const direction = button.id === 'previous-slide' ? -1 : 1;  // -1 for previous, else next
+                const currentScroll = movieCarousel.scrollLeft + movieCarousel.clientWidth;     // Current scroll position + width of the carousel
+                if (    // If the carousel is at the end or beginning, scroll to the opposite end
                     (currentScroll === maxScroll && button.id === 'next-slide') ||
                     (movieCarousel.scrollLeft === 0 && button.id === 'previous-slide')
-                ) {
-                    console.log('End reached!');
+                ) { 
                     const scrollAmount = button.id === 'next-slide' ? -(currentScroll) : maxScroll;
                     movieCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                } else {
+                } else {    // Else scroll by 120% of the carousel width
                     const scrollAmount = (movieCarousel.clientWidth / 1.20) * direction;
                     movieCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
                 }
@@ -112,17 +111,15 @@ class MovieCarousel {
 
     restartAutoScroll() {
         if(this.autoScroll > 0 ) {     // If 0, auto-scrolling is disabled
-            console.log("Restarting AutoScroll!")
-            this.autoScrollInterval = setInterval(() => {
-                const movieCarousel = this.container.querySelector('.movieCarousel');
-                const nextButton = this.container.querySelector('#next-slide');
-                nextButton.click();
+            this.autoScrollInterval = setInterval(() => {   // Set an interval to auto-scroll
+                const movieCarousel = this.container.querySelector('.movieCarousel');   // Get the movie carousel
+                const nextButton = this.container.querySelector('#next-slide'); // Get the next button
+                nextButton.click();    // Simulate a click on the next button
             }, this.autoScroll * 1000); // Auto-scroll every x seconds
         }
     }
 
     stopAutoScroll() {
-        console.log("Stopping AutoScroll!")
         clearInterval(this.autoScrollInterval);
     }
 

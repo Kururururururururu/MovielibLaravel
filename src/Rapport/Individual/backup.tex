@@ -1,0 +1,104 @@
+\documentclass[letterpaper,twocolumn]{article}
+
+\usepackage{listings}
+\usepackage{pdflscape}
+\usepackage{booktabs}
+
+\newcommand{\myparagraph}[1]{\vspace{0.1cm}\noindent \textbf{\textit{#1.}}}
+
+\title{Project Title: Individual Extension Subtitle}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+The goal of the introduction is to let the readers (the professor and TAs) know the topic of your work andthe main takeaways of it.
+The introduction should be broad enough to understand the document without reading it and specific enough to let the reader know: 
+If you are interested in this topic, you should readthis work.
+In the context of the individual extension for theWeb Technologies course, the introduction should clearly describe:
+
+\begin{itemize}
+    \item Background: Shortly describe the group project and what it is missing.
+    \item Motivation: what problem does this work try to solve (and why it is important).
+    \item Project: clearly describes the chosen topic for this extension.
+    \item Contributions: main takeaways that readers will get from reading this work.
+\end{itemize}
+
+
+Remember to keep this and all other sections within the page and column limits. 
+It is your responsibility to describe first the most important and interesting aspect of each section. 
+That way, you can leave behind non-interesting and repeated information more easily.
+
+\myparagraph{Length} Half a column.
+
+\section{Reflections}
+
+Before working on the individual extension, you worked with your group on the group project. 
+In this section, you should reflect on your group's work and your participation in the different parts of the group project. 
+For each of the group project topics (front-end, resource management, and authentication & authorization), create a subsection and:
+\begin{itemize}
+  \item Reflect on the implementation of the topic: howyou see the implementation. Is it a good implementation? Does it solve the issue at hand? Are there any particular struggles you have when working with it? What about source code readability and software engineering practices?
+  \item List some particular good implementations (something you feel proud to learn) and anything you believe could be improved (better software engineering practices, relationships within the group members, solutions not covering all possible cases, UI/UX, etc)
+\end{itemize}
+
+\myparagraph{Length} 1 columns.
+
+\section{Individual Extension}
+In this section, you should clearly describe the individual extension you developed for the group project. 
+You should
+\begin{itemize}
+    \item Motivation: what is the problem, and why do you believe it is important to solve it?
+    \item Technical description: describe your solution in technical terms (implementation details)
+    \item Reflections: similar to the reflections on the group project, you should reflect on your implementation.
+\end{itemize}
+
+\myparagraph{Length} 1 columns.
+
+\section{Security Reflections}
+Security is critical in any software platform, but it isparticularly important in web development. 
+In this section, you should reflect on security considerations over the group project and your individual extension (if it makes sense). 
+You should describe security considerations over:
+
+\begin{itemize}
+    \item sensible data (like passwords)
+    \item database access.
+    \item different possible attacks that your application (does not) allows (more in security lecture), and why you decide to allow them.
+    \item individual extension: how it changes the security considerations and what you did to solve security problems.
+    \item anything you consider relevant.
+  \end{itemize}
+
+\myparagraph{Length} Half a column.
+
+\section{Performance & Scalability Reflections}
+
+Performance and scalability are the other vital topics we learned over this course. 
+In this section, you should reflect on performance and scalability considerations over the group project and your individual extension (if it makes sense). 
+You should describe:
+\begin{itemize}
+    \item any performance issue you encounter and how you found them.
+    \item how you implemented things considering performance (for example, counting resources in the database instead of in memory)
+    \item any conscious decision that introduces a slowdown in the application.
+    \item how you may scale the application for dozens of users.
+    \item individual extension: how it changes the performance and scalability of the appliaction and what you did to solve this.
+    \item anything you consider relevant.
+  \end{itemize}
+
+\myparagraph{Length} Half a column.
+
+\section{Conclusion}
+The goal of the conclusion is similar to the introduction: it summarizes the work itself and the takeaways a reader should take when reading this work. 
+However, it can use the information presented in the work to be more specific than the introduction. 
+In the context of the individual extension of the Web Technologies course, the conclusion should clearly describe:
+\begin{itemize}
+  \item Summary: summary of the individual extension work and main takeaways.
+  \item Reflections: summary of security and performance reflections.
+  \item Future work: interesting directions on how the presented individual extension work can evolve in the future.
+\end{itemize}
+
+\myparagraph{Length} Half a column.
+
+\end{document}
+

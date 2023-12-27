@@ -41,7 +41,7 @@
                 });
             </script>
         </div>
-
+    </section>
 
     <!-- Main Body End -->
     <!-- Footer imported from ./comps/main/footer.blade.php -->

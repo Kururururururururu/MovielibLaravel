@@ -60,14 +60,18 @@ button.link:hover {
     text-decoration: underline;
 }
 
-
-button.link {
+a.link {
+    display: inline-block;
     color: white !important;
     font-weight: bold;
     background: none;
     border: none;
+    margin-left: 15px;
 }
 
 div.Alreadycreated {
+    text-align: center;
+    
+
     display: inline-flex;
 }

@@ -25,20 +25,18 @@ In our application we did not want to use the default styles that the browser ha
 However, CSS can become difficult to navigate through and maintain.
 The reason behind this is, that you never know if a style has been used somewhere else in the application.
 This can cause inadvertent changes in other sections of the app which are often hard to debug.
-% [kommentar 1] Omformuler næste linje
-For this reason especially being a group project, which will most of the time make it even more difficult, we had different CSS files for different pages unless they were common components across pages.
+For this reason especially being a group project, which most of the time makes it even more difficult, we had different CSS files for different pages unless they were common components across pages.
 So, as far as that problem was concerned we also made sure that descriptive class names were used only along with targeting IDs and classes that were specific to the page.
-% [kommentar 2] Omformuler næste linje
-This way others would remain unchanged by mistake.
-% [kommentar 3] Omformuler næste linje
-There is a downside to doing this, however, as it can lead to a lot of duplicate code, which can also make it hard to maintain, as it is likely that at some point, there will be unused styles in those CSS files.
+This way others CSS files would remain unchanged.
+There is a downside to doing this, it can lead to a lot of duplicate code, which can also make it hard to maintain, as it is likely that at some point, there will be unused styles in those CSS files.
 We weighed the pros and cons of this approach and decided that it was the best approach for our project.\newline
 
 \textbf{JavaScript:} \newline
 JavaScript is a programming language that helps make web pages interactive and dynamic. Moreover, it allows for adding or removing elements from the page, changing the styles of elements as well as making API calls.
 Since Laravel is a server-side application most of our data are fetched from the server on page load.
-% [kommentar 4] Omformuler næste linje (måske bryd sætningen ned?)
-But we also have some dynamic elements on the page such as the movies' comment section, which can be fetched from the server when a user clicks on the comment button by making an API call to the server, the watchlist button for correctly displaying the current state of the movies' existence in a user's watchlist, and rating system used to rate movies from 1 to 5 stars.\newline
+But we also have some dynamic elements on the page such as the movies' comment section, which can be 
+fetched from the server when a user clicks on the comment button by making an API call to the server, the watchlist button for 
+correctly displaying the current state of the movies' existence in a user's watchlist, and rating system used to rate movies from 1 to 5 stars.\newline
 
 The way that JavaScript is incorporated into HTML is by using the \textless{}script\textgreater{} tag. It is not only used for including JavaScript files but can also be used for writing JavaScript code directly in the HTML file.
 We have gone with the former approach, because it is less complex to maintain and debug since you can easily see which JavaScript files are included on the page.

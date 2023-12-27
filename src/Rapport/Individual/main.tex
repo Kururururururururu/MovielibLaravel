@@ -6,20 +6,20 @@
 
 \newcommand{\myparagraph}[1]{\vspace{0.1cm}\noindent \textbf{\textit{#1.}}}
 
-\title{Project Title: Carousel}
-\date{}
+\title{MovielibLaravel: Movie Carousel}
+\author{Jonas Mathias Lissner}
+\date{28/12/2023}
 
 \begin{document}
 
 \maketitle
-\pagebreak
+\clearpage
 \section{Introduction}
 The group project provided a foundation for this individual extension.
 
 \textbf{Background:} % NOT OK
-The group project aimed to create a web application that provides a foundamental movie library for the users to interact with,
-such as commenting on movies, rate them, and/or add them to their watchlist.
-In my opinion, the group project is missing a feature that allows users to stay engaged upon visiting the front-page.
+The group project aimed to create a web application that provides a foundamental movie library for the users to interact with, such as finding new movies to watch, 
+commenting on movies, rate them, and/or add them to their watchlist.
 
 \textbf{Motivation:} % OK
 The motivation behind this extension aims to elevate the user experience by introducing a dynamic and engaging feature, that showcases the currently most popular movies.
@@ -28,32 +28,32 @@ The motivation behind this extension aims to elevate the user experience by intr
 The individual extension aims to create a movie carousel implementation in form of an API that can be used in various projects.
 
 \textbf{Contributions:} % NOT OK
-The contributions of this project highlights the development of a dynamic movie carousel, demonstrating its use in a web application, its technicalities, and its potential applications in other projects.
+The contributions of this project highlights the development of a dynamic movie carousel, demonstrating its use in our web appliaction, its technicalities, and its potential applications in other projects.
 
 
 \section{Reflections}
 \subsection{Front-end} % OK
-I think the front-end is very well designed, responsive and easy to navigate, and it feels like its developed with the UX in mind, due to its simplicity and minimalism.
+I think the front-end is very well designed, responsive and easy to navigate, and it feels like its developed with the UX in mind due to its simplicity and minimalism.
 As I have a background in web development, I hadn't really any noticeable struggles with the front-end, my biggest struggle was to learn Laravel and utilize it effectively.
 The source code readability is generally clean and well structured, but I think additional comments and documentation would enhance the readability even further.
 
 \subsection{Resource management}  % OK
 Even though our project's resource management relies on utilizing an external public API for the movies, I think the implementation is as good as it can be, given the time we had and the scope of our project. 
 A positive aspect to this is the seperation of concerns, as the resource management is handled by the external API, and our project only needs to handle the data that is returned from the API, allowing for modurlarity.
-Our internal resource management is also well structured, as we have a seperate controller for each resource, and a model for each resource, also allowing for modurlarity within our bounds.
+Our internal resource management is also well structured, as we have a seperate controller for each resource, and a model for each resource, also allowing for modurlarity within the backend.
 
 \subsection{Authentication authorization} % NOT OK
-By utilizing Laravel's built-in authentication and authorization, we were able to effortlessly implement a secure and robust authentication and authorization system.
+By utilizing Laravel's built-in authentication and authorization, we were able to implement a secure and robust authentication and authorization system.
 
 \section{Individual Extension}
 \textbf{Motivation:} % NOT OK
-The motivation behind this extension is to enhance the UX by introducing a dynamic and enganging feature on the front-page. The addtion aims to capture the user's interest, and stimulate curiosity about the showcased movies.
+The motivation behind this extension is to enhance the UX by introducing a dynamic and enganging feature on the front-page. The extension aims to capture the user's interest by stimulating their curiosity about the showcased movies.
 
 \textbf{Technical description:} % OK
 The technical description of this extension is a movie carousel, that showcases the currently most popular movies. 
 The carousel is implemented as an API, that easily can be used in other projects. 
 The API is developed with modularity and scalability in mind as the carousel scales to the boundaries of the container that it's within, and dynamically adjust to the amount of movies it showcases. 
-Furthermore, it's relatively easy to construct a new movie carousel, as it only requires a few lines of code and 3 parameters: the container it should be within, the list of movie data, and an optional auto-scroll timer parameter.
+Furthermore, it's relatively easy to construct a new movie carousel, as it only requires a few lines of code and 3 parameters: the container it should be within, the list of movie data, and an optional auto-scroll time.
 
 \textbf{Reflections:} % ALMOST OK, EXCEPT FOR THE LAST 2 PARAGRAPHS
 I think the overall implementation of the movie carousel is very well done, due to its intuitive, dynamic and scalable design. 
@@ -61,7 +61,7 @@ As I'm not very experienced with JavaScript and Laravel, I had to learn a lot of
 Both it's design and implementation went through several iterations until I was pleased with the result. 
 Overall, I ended being very pleased with the result as it adds a very needed and exciting visual component to the frontpage, and feel like I have achieved what I envisioned for the carousel and learned a lot during the process.
 However, I think the carousel could be improved further by adding additional API endpoints, as this would allow for more flexibility and customization, such as the ability to control the scroll speed, and the ability to control the amount of movies it showcases. 
-Lastly, I think the carousel could be improved by allowing for more customization, such as the design/color scheme, and adding flexible components within the carousel itself.
+It could also be improved by allowing for more customization, such as the design/color scheme, and adding flexible components within the carousel itself.
 
 \section{Security Reflections}
 \textbf{Group project:}
@@ -75,17 +75,17 @@ Lastly, I think the carousel could be improved by allowing for more customizatio
 The Movie Carousel doesn't introduce any new vulnarabilities, as it's primarily a front-end components that only handles data that is already accessible through the public TMDB API.
 
 \section{Performance & Scalability Reflections}
-The biggest and most noticeable perfomance issue we encountered was the response time of the TMDB API, as it sometimes took several seconds to respond. This design choice was inevitable as we are relying on an external public API to get our movie data, with limited customization in terms of endpoints.
-We tried to counter this as best as we could by using the most efficient endpoint, depending on the result we were trying to achieve. But it had its limitations, as we had the choice of either fetch a whole page of movies, or a single one.
-This issue could possibly be solved by caching the data, but as it would require a lot of storage and was out of scope for this project, we decided not to implement that functionality.
-For the exact same reason, my individual extension didn't introduce any new performance issue, as it before the Movie Carousel extension still had to fetch the same amount of data from the TMDB API. Furthermore, I think the extension is a very good trade off, as I think it adds a lot of value in terms of UX to the frontpage. It's also very scaleable, and depending on the movie data it receives, it can showcase anything the user wants, such as the most popular movies, the most recent movies, or the most popular movies within a specific genre etc.
+The most noticeable perfomance issue we encountered was the response time of the TMDB API, as it sometimes takes several seconds to respond. This design choice was inevitable as we are relying on an external public API to get our movie data, with limited results in terms of endpoints.
+We tried to counter this by using the most efficient endpoint, depending on the result we wanted. But it had its limitations, as we had the choice of either fetching a whole page of movies, or a single one.
+Caching the data may have helped lessen the issue, but as it would require a lot of storage and was out of scope for this project, we decided not to.
+However, the individual extension doesn't introduce any new performance issue, as it, before the Movie Carousel extension, still had to fetch the same amount of data from the TMDB API. It's also very scaleable, as it can showcase anything the user wants, depending on the list of movie data it receives. Therefore, I think the extension is a very good trade off, as it adds a lot of UX value to the frontpage.
 
 \section{Conclusion}
 The individual extension aims to create a Movie Carousel implementation in form of an API that can be used in various projects to enhance the user experience upon entering the website. 
 The extension is developed with modularity and scalability in mind, as it scales to the boundaries of the container that it's within, and dynamically adjust to the amount of movies it showcases. 
-The construction of a new movie carousel is relatively simple, as it only requires a few lines of code and 3 parameters to implement: the container it should be within, the list of movie data, and an optional auto-scroll time.
-The extension isn't introducing any new security vulnarabilities, as it's a component that only handles already accessible data, it does however introduce a new performance issue, as it relies on the external TMDB API to get the required movie data, which sometimes takes several seconds to respond.
-For future improvements of the extension, I think additional API endpoints for customization that would enhance the flexibility of the component would be a valued addition, such as the ability to alter the CSS styling around and within the container, styling the carousel itself and the movie cards within it.
+The construction of a new movie carousel is simple, as it only requires a few lines of code and 3 parameters: its container, list of movie data, and an optional auto-scroll time.
+The extension doesn't introduce any new security vulnarabilities, as it's a component that only handles already requested data from TMDB.
+A valued addition for improving the carousel in the future would be adding additional API endpoints for customization that would enhance the flexibility of the component, such as the ability to alter the CSS styling around and within the carousel.
 
 \end{document}
 
